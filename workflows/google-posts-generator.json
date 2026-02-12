@@ -1,0 +1,160 @@
+{
+  "name": "Google Posts Generator",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "firmenname",
+              "name": "firmenname",
+              "value": "Test Café",
+              "type": "string"
+            },
+            {
+              "id": "branche",
+              "name": "branche",
+              "value": "Gastronomie",
+              "type": "string"
+            },
+            {
+              "id": "stadt",
+              "name": "stadt",
+              "value": "Penzberg",
+              "type": "string"
+            },
+            {
+              "id": "besonderheit",
+              "name": "besonderheit",
+              "value": "Hausgemachte Kuchen und Bio-Kaffee",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "input-data",
+      "name": "Input Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get input data from previous node\nconst inputData = $input.first().json;\n\n// Build API request body with proper formatting\nconst apiBody = {\n  model: 'claude-sonnet-4-20250514',\n  max_tokens: 2000,\n  messages: [{\n    role: 'user',\n    content: `Du bist ein Google Business Profile Experte. Erstelle 4 verschiedene Google Posts für folgendes Business:\n\nFirmenname: ${inputData.firmenname}\nBranche: ${inputData.branche}\nStadt: ${inputData.stadt}\nBesonderheit: ${inputData.besonderheit}\n\nErstelle 4 Posts in verschiedenen Kategorien:\n1. TIPP/WISSEN: Nützlicher Branchen-Tipp für Kunden\n2. ANGEBOT: Verlockende Aktion oder Rabatt\n3. BEHIND-THE-SCENES: Einblick ins Team oder Prozess\n4. FAQ: Beantworte häufige Kundenfrage\n\nJeder Post:\n- Max 1500 Zeichen\n- Beginnt mit passendem Emoji\n- Endet mit Call-to-Action\n- Lokalen Bezug zu ${inputData.stadt} einbauen\n- Natürlich & authentisch schreiben\n- Keine Hashtags (wirken spammy)\n\nANTWORTE NUR mit diesem JSON-Format, NICHTS ANDERES:\n{\n  \"posts\": [\n    {\"kategorie\": \"TIPP\", \"text\": \"...\", \"cta\": \"...\"},\n    {\"kategorie\": \"ANGEBOT\", \"text\": \"...\", \"cta\": \"...\"},\n    {\"kategorie\": \"BEHIND-THE-SCENES\", \"text\": \"...\", \"cta\": \"...\"},\n    {\"kategorie\": \"FAQ\", \"text\": \"...\", \"cta\": \"...\"}\n  ]\n}`\n  }]\n};\n\n// Return both original data AND the API body as JSON string\nreturn {\n  json: {\n    ...inputData,\n    api_body: JSON.stringify(apiBody)\n  }\n};"
+      },
+      "id": "prepare-api-body",
+      "name": "Prepare API Body",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ $json.api_body }}",
+        "options": {}
+      },
+      "id": "claude-api",
+      "name": "Claude API Call",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [850, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Claude API response\nconst response = $input.first().json;\nconst content = response.content[0].text;\n\n// Extract JSON from response (Claude might add explanation before/after)\nconst jsonMatch = content.match(/\\{[\\s\\S]*\\}/);\nif (!jsonMatch) {\n  throw new Error('❌ Keine gültige JSON-Antwort von Claude gefunden');\n}\n\nconst postsData = JSON.parse(jsonMatch[0]);\nconst inputData = $('Input Data').first().json;\n\n// Create separate items for each post (easier for Google Sheets later)\nconst items = postsData.posts.map((post, index) => ({\n  json: {\n    firmenname: inputData.firmenname,\n    branche: inputData.branche,\n    stadt: inputData.stadt,\n    post_nummer: index + 1,\n    kategorie: post.kategorie,\n    text: post.text,\n    cta: post.cta,\n    erstellt_am: new Date().toISOString().split('T')[0],\n    status: '📝 Entwurf'\n  }\n}));\n\nreturn items;"
+      },
+      "id": "parse-response",
+      "name": "Parse & Format Posts",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 300]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Input Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Input Data": {
+      "main": [
+        [
+          {
+            "node": "Prepare API Body",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare API Body": {
+      "main": [
+        [
+          {
+            "node": "Claude API Call",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude API Call": {
+      "main": [
+        [
+          {
+            "node": "Parse & Format Posts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "active": false,
+  "pinData": {},
+  "staticData": null
+}
