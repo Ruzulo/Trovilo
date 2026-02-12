@@ -1,0 +1,32 @@
+# Secrets & Credentials
+.env
+.env.local
+*.key
+*-credentials.json
+api-keys.txt
+
+# n8n
+n8n-data/
+.n8n/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Temp
+tmp/
+temp/
+*.tmp
