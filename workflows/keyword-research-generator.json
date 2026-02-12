@@ -1,0 +1,82 @@
+{
+  "name": "Keyword Research Generator",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {"id": "branche", "name": "branche", "value": "Café", "type": "string"},
+            {"id": "stadt", "name": "stadt", "value": "Penzberg", "type": "string"},
+            {"id": "umkreis", "name": "umkreis", "value": "Weilheim, Peiting", "type": "string"}
+          ]
+        }
+      },
+      "id": "input-data",
+      "name": "Input Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const inputData = $input.first().json;\n\nconst apiBody = {\n  model: 'claude-sonnet-4-20250514',\n  max_tokens: 2500,\n  messages: [{\n    role: 'user',\n    content: `Erstelle Local SEO Keywords für:\\nBranche: ${inputData.branche}\\nOrt: ${inputData.stadt}\\nUmkreis: ${inputData.umkreis}\\n\\nKategorien (30 Keywords total):\\n1. SERVICE+ORT (12): \"${inputData.branche} ${inputData.stadt}\", \"${inputData.branche} Weilheim\"\\n2. NEAR ME (6): \"${inputData.branche} in der Nähe\", \"${inputData.branche} near me\"\\n3. NOTFALL (4): \"${inputData.branche} jetzt geöffnet\", \"${inputData.branche} Sonntag\"\\n4. QUALITÄT (4): \"bestes ${inputData.branche} ${inputData.stadt}\", \"günstiges ${inputData.branche}\"\\n5. LONG-TAIL (4): \"${inputData.branche} mit Terrasse ${inputData.stadt}\"\\n\\nJedes Keyword: Suchvolumen (hoch/mittel/niedrig), Wettbewerb (hoch/mittel/niedrig), Priorität (1-5)\\n\\nJSON nur:\\n{\\n  \"keywords\": [\\n    {\"keyword\": \"...\", \"kategorie\": \"SERVICE_ORT\", \"suchvolumen\": \"hoch\", \"wettbewerb\": \"mittel\", \"prioritaet\": 4}\\n  ]\\n}`\n  }]\n};\n\nreturn {\n  json: {\n    ...inputData,\n    api_body: JSON.stringify(apiBody)\n  }\n};"
+      },
+      "id": "prepare-api-body",
+      "name": "Prepare API Body",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "anthropic-version", "value": "2023-06-01"},
+            {"name": "content-type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ $json.api_body }}",
+        "options": {}
+      },
+      "id": "claude-api",
+      "name": "Claude API Call",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [850, 300],
+      "credentials": {"httpHeaderAuth": {"id": "YOUR_CREDENTIAL_ID", "name": "Header Auth account"}}
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst content = response.content[0].text;\n\nconst jsonMatch = content.match(/\\{[\\s\\S]*\\}/);\nif (!jsonMatch) {\n  throw new Error('❌ Keine gültige JSON-Antwort von Claude');\n}\n\nconst keywordData = JSON.parse(jsonMatch[0]);\nconst inputData = $('Input Data').first().json;\n\nconst items = keywordData.keywords.map((kw, index) => ({\n  json: {\n    nr: index + 1,\n    keyword: kw.keyword,\n    kategorie: kw.kategorie,\n    suchvolumen: kw.suchvolumen,\n    wettbewerb: kw.wettbewerb,\n    prioritaet: kw.prioritaet,\n    branche: inputData.branche,\n    stadt: inputData.stadt,\n    datum: new Date().toISOString().split('T')[0]\n  }\n}));\n\nreturn items;"
+      },
+      "id": "parse-keywords",
+      "name": "Parse & Format Keywords",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 300]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {"main": [[{"node": "Input Data", "type": "main", "index": 0}]]},
+    "Input Data": {"main": [[{"node": "Prepare API Body", "type": "main", "index": 0}]]},
+    "Prepare API Body": {"main": [[{"node": "Claude API Call", "type": "main", "index": 0}]]},
+    "Claude API Call": {"main": [[{"node": "Parse & Format Keywords", "type": "main", "index": 0}]]}
+  },
+  "settings": {"callerPolicy": "workflowsFromSameOwner"}
+}

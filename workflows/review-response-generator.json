@@ -1,0 +1,85 @@
+{
+  "name": "Review Response Generator",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "reviews",
+              "name": "reviews",
+              "value": "={{ JSON.stringify([{scenario: '✅ POSITIV', bewertung: 5, reviewer: 'Anna M.', text: 'Super Kaffee!'}, {scenario: '❌ NEGATIV', bewertung: 2, reviewer: 'Thomas K.', text: 'Kaffee lauwarm.'}, {scenario: '➖ NEUTRAL', bewertung: 3, reviewer: 'Lisa S.', text: 'Durchschnittlich.'}]) }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "test-data",
+      "name": "Test Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const reviewsData = JSON.parse($input.first().json.reviews);\n\nconst reviewsList = reviewsData.map((r, i) => \n  `Review ${i+1}:\\n- Bewertung: ${r.bewertung}/5\\n- Reviewer: ${r.reviewer}\\n- Text: \"${r.text}\"`\n).join('\\n\\n');\n\nconst apiBody = {\n  model: 'claude-sonnet-4-20250514',\n  max_tokens: 1500,\n  messages: [{\n    role: 'user',\n    content: `Schreibe für jede dieser 3 Google Reviews eine professionelle Antwort:\\n\\n${reviewsList}\\n\\nRichtlinien:\\n- 4-5★: Freundlich, einladend\\n- 1-2★: Professionell, Kontakt anbieten\\n- 3★: Wertschätzend\\n- Namen nutzen, max 60 Wörter pro Antwort\\n\\nJSON (Array mit 3 Antworten in derselben Reihenfolge):\\n{\\n  \"antworten\": [\\n    {\"antwort\": \"...\", \"ton\": \"freundlich\"},\\n    {\"antwort\": \"...\", \"ton\": \"professionell\"},\\n    {\"antwort\": \"...\", \"ton\": \"wertschätzend\"}\\n  ]\\n}`\n  }]\n};\n\nreturn { \n  json: { \n    original_reviews: reviewsData,\n    api_body: JSON.stringify(apiBody) \n  } \n};"
+      },
+      "id": "prepare-api",
+      "name": "Prepare API Body",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "anthropic-version", "value": "2023-06-01"},
+            {"name": "content-type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ $json.api_body }}",
+        "options": {}
+      },
+      "id": "claude-api",
+      "name": "Claude API Call",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [850, 300],
+      "credentials": {"httpHeaderAuth": {"id": "YOUR_CREDENTIAL_ID", "name": "Header Auth account"}}
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst originalReviews = $('Prepare API Body').first().json.original_reviews;\n\nconst content = response.content[0].text;\nconst jsonMatch = content.match(/\\{[\\s\\S]*\\}/);\nif (!jsonMatch) throw new Error('❌ Keine JSON');\n\nconst parsed = JSON.parse(jsonMatch[0]);\n\nconst items = parsed.antworten.map((antwort, index) => ({\n  json: {\n    scenario: originalReviews[index].scenario,\n    bewertung: originalReviews[index].bewertung,\n    reviewer: originalReviews[index].reviewer,\n    review: originalReviews[index].text,\n    antwort: antwort.antwort,\n    ton: antwort.ton\n  }\n}));\n\nreturn items;"
+      },
+      "id": "parse-split",
+      "name": "Parse & Split Responses",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 300]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {"main": [[{"node": "Test Data", "type": "main", "index": 0}]]},
+    "Test Data": {"main": [[{"node": "Prepare API Body", "type": "main", "index": 0}]]},
+    "Prepare API Body": {"main": [[{"node": "Claude API Call", "type": "main", "index": 0}]]},
+    "Claude API Call": {"main": [[{"node": "Parse & Split Responses", "type": "main", "index": 0}]]}
+  },
+  "settings": {"callerPolicy": "workflowsFromSameOwner"}
+}
