@@ -1,5 +1,5 @@
 {
-  "searchStrings": [
+  "searchStringsArray": [
     "Café Penzberg",
     "Restaurant Penzberg",
     "Bäckerei Penzberg",
@@ -9,30 +9,26 @@
     "Zahnarzt Penzberg",
     "Physiotherapie Penzberg",
     "Friseur Penzberg",
-    
     "Café Bad Tölz",
     "Restaurant Bad Tölz",
     "Elektriker Bad Tölz",
     "Klempner Bad Tölz",
     "Zahnarzt Bad Tölz",
     "Physiotherapie Bad Tölz",
-    
     "Café Wolfratshausen",
     "Restaurant Wolfratshausen",
     "Elektriker Wolfratshausen",
     "Zahnarzt Wolfratshausen",
-    
     "Café Geretsried",
     "Restaurant Geretsried",
     "Elektriker Geretsried",
     "Zahnarzt Geretsried",
-    
     "Café near Penzberg",
     "Restaurant near Penzberg",
     "Handwerker in der Nähe von Penzberg",
     "Friseur Umgebung Penzberg"
   ],
-  "maxCrawledPlaces": 12,
+  "maxCrawledPlacesPerSearch": 12,
   "language": "de",
   "includeWebsite": true,
   "includeReviews": true,
