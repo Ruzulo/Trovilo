@@ -27,6 +27,8 @@
 - [ ] Kostenlosen Audit: die 5 Kategorien in zwei Zeilen aufteilen: erste Zeile 3 Kategorien, mittig ausgerichtet. zweite Zeile 2 Kategorien, mittig ausgerichtet
 - [ ] Obere Leiste auf der Website: Höhe verkleinern. "Local SEO Penzberg" (unter Trivolo) entfernen oder in die gleiche Zeile wie Trivol schreiben
 - [ ] "Local SEO Penzberg" -> "Lokal SEO Penzberg"
+- [ ] Button "Jetzt anfragen": auf der gleichen Höhe in Kickstart und Professional bringen.
+
 
 
 
