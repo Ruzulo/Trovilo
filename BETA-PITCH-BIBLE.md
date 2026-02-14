@@ -1,0 +1,1 @@
+$(cat /home/claude/BETA-PITCH-BIBLE.md)
