@@ -1,4 +1,4 @@
-/* Trovilo Website CSS - v2.0 */
+/* Trovilo Website CSS - v2.2 */
 
 /* ==================== */
 /* RESET & BASE STYLES  */
@@ -228,6 +228,74 @@ body {
     max-width: 850px;
     margin: 0 auto var(--spacing-lg) auto;
     line-height: 1.7;
+}
+
+/* NEW: Audit Checklist Styles */
+.audit-checklist {
+    background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
+    padding: 3rem;
+    border-radius: 16px;
+    margin: 3rem auto;
+    max-width: 1000px;
+    border: 2px solid #e0f2fe;
+}
+
+.audit-checklist h3 {
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.checklist-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.checklist-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checklist-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,168,150,0.15);
+}
+
+.checklist-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.checklist-item h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin: 0.75rem 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.checklist-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.checklist-note {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0f2fe;
 }
 
 .audit-options {
@@ -656,6 +724,12 @@ body {
     font-weight: 700;
 }
 
+.case-study-note {
+    color: var(--text-light);
+    margin-top: 1rem;
+    font-style: italic;
+}
+
 .case-study-text .cta-button-large {
     display: block;
     margin-top: var(--spacing-lg);
@@ -941,6 +1015,24 @@ body {
     
     .audit-steps {
         flex-direction: column;
+    }
+    
+    /* Audit Checklist Responsive */
+    .audit-checklist {
+        padding: 2rem 1.5rem;
+    }
+    
+    .checklist-categories {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .checklist-item {
+        padding: 1.25rem;
+    }
+    
+    .audit-checklist h3 {
+        font-size: 1.5rem;
     }
 }
 
