@@ -16,18 +16,17 @@
 ## 🟡 WICHTIG (Nächste 2 Wochen)
 
 ### Content
-- [ ] Preise/Produkte: was ist mit potentiellen Kunden, die schon einen GBP haben? Hier kann man ja ein einfaches Konzept anbieten: bestehendes GBP optimieren + Fokus auf laufende Optimierung/Betreuung: monatliches Audit, Postings, Review-Management. 99€/Monat inkl. erstem Monat Betreuung. (Hier gibt es ja keinen großen manuellen Aufwand für mich, oder?)
-- [ ] Betreuungspaket ergänzen: laufende Optimierung/Betreuung: monatliches Audit, Postings, Review-Management. (Ziel: später Upselling auf Websites usw.). Welcher Preis ist realistisch?
-- [ ] nochmal die Preise checken. Ist das wirklich realistisch? Ich denke für Geschäfte, die noch gar nichts haben, kann man einiges verlangen. Aber Geschäfte, die schon GBP haben, sind ja schon relativ fit. Denen kann man ein kleineres Betreuungspaket verkaufen. Später dann Upselling (Website Optimierung).
+- [x] Preise/Produkte: was ist mit potentiellen Kunden, die schon einen GBP haben? Hier kann man ja ein einfaches Konzept anbieten: bestehendes GBP optimieren + Fokus auf laufende Optimierung/Betreuung: monatliches Audit, Postings, Review-Management. 99€/Monat inkl. erstem Monat Betreuung. (Hier gibt es ja keinen großen manuellen Aufwand für mich, oder?)
+- [x] Betreuungspaket ergänzen: laufende Optimierung/Betreuung: monatliches Audit, Postings, Review-Management. (Ziel: später Upselling auf Websites usw.). Welcher Preis ist realistisch?
+- [x] nochmal die Preise checken. Ist das wirklich realistisch? Ich denke für Geschäfte, die noch gar nichts haben, kann man einiges verlangen. Aber Geschäfte, die schon GBP haben, sind ja schon relativ fit. Denen kann man ein kleineres Betreuungspaket verkaufen. Später dann Upselling (Website Optimierung).
 - [ ] Weitere Upselling Idee: wir stellen sicher, dass sie auch von der AI gefunden werden. Kunden suchen immer mehr mit ChatGPT: "Ich suche einen Friseur in Penzberg"
 
 ### Design/UX
 - [ ] Trovilo Logo ergänzen
 - [ ] Favicon ergänzen
 - [ ] Kostenlosen Audit: die 5 Kategorien in zwei Zeilen aufteilen: erste Zeile 3 Kategorien, mittig ausgerichtet. zweite Zeile 2 Kategorien, mittig ausgerichtet
-- [ ] Obere Leiste auf der Website: Höhe verkleinern. "Local SEO Penzberg" (unter Trivolo) entfernen oder in die gleiche Zeile wie Trivol schreiben
-- [ ] "Local SEO Penzberg" -> "Lokal SEO Penzberg"
-- [ ] Button "Jetzt anfragen": auf der gleichen Höhe in Kickstart und Professional bringen.
+- [x] Obere Leiste auf der Website: Höhe verkleinern. "Local SEO Penzberg" (unter Trivolo) entfernen oder in die gleiche Zeile wie Trivol schreiben
+- [x] Button "Jetzt anfragen": auf der gleichen Höhe in Kickstart und Professional bringen.
 
 
 
