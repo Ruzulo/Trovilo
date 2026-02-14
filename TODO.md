@@ -8,7 +8,7 @@
 
 ## 🔴 KRITISCH (Blocker für Launch)
 
-- [ ] Impressum.html: Email auf `servus@trovilo.de` ändern (aktuell noch `hallo@trovilo.de`)
+- [x] Impressum.html: Email auf `servus@trovilo.de` ändern (aktuell noch `hallo@trovilo.de`)
 - [ ] Datenschutz.html: Vollständigen Text ergänzen (aktuell unvollständig)
 
 ---
@@ -25,6 +25,9 @@
 - [ ] Trovilo Logo ergänzen
 - [ ] Favicon ergänzen
 - [ ] Kostenlosen Audit: die 5 Kategorien in zwei Zeilen aufteilen: erste Zeile 3 Kategorien, mittig ausgerichtet. zweite Zeile 2 Kategorien, mittig ausgerichtet
+- [ ] Obere Leiste auf der Website: Höhe verkleinern. "Local SEO Penzberg" (unter Trivolo) entfernen oder in die gleiche Zeile wie Trivol schreiben
+- [ ] "Local SEO Penzberg" -> "Lokal SEO Penzberg"
+
 
 
 ### SEO
