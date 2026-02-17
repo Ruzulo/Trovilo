@@ -31,21 +31,45 @@
 
 ### Audit-Template ✅
 - **Format: Google Doc** (nicht mehr Canva – besser für WhatsApp & Handy-Lesbarkeit)
-- Google Doc: https://docs.google.com/document/d/1Bpt9GbRgAQoc1LbtUpgw7Cn9rcDc8wtnRSmGcfABKHI/edit
-- Canva Design (eingefroren): https://www.canva.com/d/RZT2RR_zH2845aW
-- Struktur (4 Abschnitte):
-  - Abschnitt 1: Deckblatt (Firmenname, Datum, Trovilo-Branding)
-  - Abschnitt 2: Profil-Bewertung (5 Kategorien, Gesamtscore /100, CTA)
-  - Abschnitt 3: Top 3 Verbesserungen + Prognose-Tabelle
-  - Abschnitt 4: Warum Trovilo + Pakete (299€/599€/999€) + Kontakt
-- Trovilo-Farbe: Teal #00A896
-- **TODO: Telefonnummer + Email im Template eintragen**
+- Google Doc Vorlage: https://docs.google.com/document/d/1Bpt9GbRgAQoc1LbtUpgw7Cn9rcDc8wtnRSmGcfABKHI/edit
+- Canva Design (eingefroren, nicht mehr verwendet): https://www.canva.com/d/RZT2RR_zH2845aW
+
+**Struktur:**
+- Seite 1: Deckblatt + GBP Screenshot + Gesamtscore (teal) + Profil-Analyse Tabelle + Wettbewerber-Vergleich + CTA (rot)
+- Seite 2: Maßnahmen-Tabelle + Paket-Empfehlung (gelb) + Warum Trovilo + Nächster Schritt + Footer
+
+**Alle Platzhalter (n8n-ready mit {{VARIABLE}}):**
+- {{FIRMENNAME}}, {{BRANCHE}}, {{DATUM}}
+- {{GBP_SCREENSHOT}} – Bild wird manuell eingefügt
+- {{SCORE_GESAMT}} – Gesamtpunktzahl 0-100
+- {{SICHTBARKEIT}}, {{LETZTE_AKTIVITAET}}, {{ANZAHL_BEWERTUNGEN}}, {{BEWERTUNGS_SCHNITT}}
+- {{BEFUND_VOLLSTAENDIGKEIT}}, {{SCORE_VOLLSTAENDIGKEIT}}
+- {{BEFUND_FOTOS}}, {{SCORE_FOTOS}}
+- {{BEFUND_BEWERTUNGEN}}, {{SCORE_BEWERTUNGEN}}
+- {{BEFUND_LEISTUNGEN}}, {{SCORE_LEISTUNGEN}}
+- {{BEFUND_AKTIVITAET}}, {{SCORE_AKTIVITAET}}
+- {{WETTB_SICHTBARKEIT_SIE}}, {{WETTB_1_NAME}}, {{WETTB_1_SICHTBARKEIT}}, {{WETTB_1_BEWERTUNGEN}}
+- {{WETTB_2_NAME}}, {{WETTB_2_SICHTBARKEIT}}, {{WETTB_2_BEWERTUNGEN}}
+- {{MASSNAHME_1_BEREICH}} bis {{MASSNAHME_5_BEREICH}} + _TEXT
+- {{EMPFOHLENES_PAKET}}, {{PAKET_BEGRUENDUNG}}, {{PAKET_LEISTUNGEN}}, {{PAKET_PREIS}}
+- {{TELEFON}}, {{EMAIL}}
+
+**TODO: Telefonnummer + Email im Template eintragen ({{TELEFON}}, {{EMAIL}})**
+
+### n8n Audit-Workflow (geplant, nächster Schritt!)
+- Input: GBP-Link + Screenshot
+- Claude analysiert GBP und füllt alle Platzhalter aus
+- n8n kopiert die Google Doc Vorlage (copyFile) mit Firmenname als Titel
+- n8n ersetzt alle {{VARIABLEN}} im kopierten Doc
+- Output: Fertiges Audit-Dokument, Link zum Verschicken
+- Screenshot wird danach manuell eingefügt (oder per Google Docs API)
 
 ## Nächste Schritte (Priorität)
-1. 📝 Audit-Template ausfüllen: Telefonnummer + Email eintragen
-2. 📋 10+ neue Leads identifizieren (Google Maps screenen)
-3. 📞 Elektro Kuhn Follow-up mit Audit (ab ~20.02.)
-4. 📞 Nemanja – warten auf Rückmeldung
+1. 📝 {{TELEFON}} + {{EMAIL}} im Audit-Template eintragen
+2. 📞 Elektro Kuhn Follow-up mit Audit (ab ~20.02.) – erstes Audit manuell ausfüllen
+3. 📞 Nemanja – warten auf Rückmeldung
+4. 🤖 n8n Audit-Workflow bauen (nach erstem manuellen Audit)
+5. 📋 10+ neue Leads identifizieren (Google Maps screenen)
 
 ## Wichtige Links
 - Website: https://trovilo.de
