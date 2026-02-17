@@ -1,6 +1,6 @@
 # Trovilo – Status für nächste Chat-Session
 
-> Letzte Aktualisierung: 17.02.2026
+> Letzte Aktualisierung: 17.02.2026, 17 Uhr
 
 ## Über Mario (Inhaber)
 - Wohnt in Penzberg, südlich von München
@@ -12,73 +12,100 @@
 
 ## Wo stehen wir?
 
-### Website ✅
+### Website ✅ FERTIG – NICHT MEHR ANFASSEN
 - trovilo.de ist live bei Ionos (FTP-Deployment)
 - GitHub: Ruzulo/Trovilo, branch: main, Ordner: /website
-- **Website nicht mehr anfassen!**
+- Text-Logo "📍 TROVILO" im Header
 
-### Lead Pipeline – DIE EINE QUELLE DER WAHRHEIT
-- **Google Sheet: https://docs.google.com/spreadsheets/d/1Iphq9TQ00OO8Mg-ktNSmWKWyzQ9z0DFgXTnSIAuBNvo**
-- LEADS.md in GitHub ist veraltet – nur Sheet verwenden!
+### Lead Pipeline
+- **Google Sheet (einzige Quelle): https://docs.google.com/spreadsheets/d/1Iphq9TQ00OO8Mg-ktNSmWKWyzQ9z0DFgXTnSIAuBNvo**
+- Google Drive Connector funktioniert nicht in Claude → Mario pflegt Sheet manuell
+- LEADS.md in GitHub ist veraltet – ignorieren
 
-### Aktueller Lead-Status (Stand 17.02.2026)
+### Lead-Status (Stand 17.02.2026 Abend)
 | Lead | Business | Ort | Status | Nächster Schritt |
 |------|----------|-----|--------|-----------------|
-| Nemanja | – | Penzberg Umgebung | 🟡 Warten | Meldet sich |
+| Nemanja | – | Penzberg Umgebung | 🟡 Warten | Meldet sich von selbst |
 | Elektro Kuhn | Elektro | Antdorf | 🟡 Warten | Follow-up ab ~20.02. MIT Audit |
-| Feodor Schraml | Malerei Schraml | Bad Heilbrunn | 🟡 Warten | Rückruf von Frau Schraml abwarten → Audit schicken |
+| Feodor Schraml | Malerei Schraml | Bad Heilbrunn | 🟡 Warten | Rückruf Frau Schraml → sofort Audit schicken (UNCLAIMED = €599!) |
 | Mike Ebel | – | – | 🟡 Warten | Nochmal anrufen |
 | Michael Demml | – | – | 🔴 Kein Interesse | – |
 | Michael Gärtner | – | – | 🔴 Gescheitert | – |
 | Kühberger Spenglerei | Spengler | Penzberg | 🔴 Kein Interesse | – |
+| ~5 weitere Handwerker | – | – | 🔴 Kein Interesse | – |
+| ~5 weitere Handwerker | – | – | 📵 Nicht erreicht | Nochmal anrufen |
+
+### Learnings aus Tag 1 Kaltakquise (17.02.)
+- **15 Anrufe** gemacht – ernüchternd aber normal
+- Elektriker → fast alle überlastet, kein Schmerz → **nicht mehr anrufen**
+- Häufigster Einwand: "Kein Interesse" oder "Ich kann mich vor Aufträgen kaum retten"
+- 2x in Rente – Zielgruppe besser filtern
+- Email-Outreach wurde diskutiert → **nicht empfohlen** (wirkt spamig, wird ignoriert)
+- Persönlich vorbeigehen → nur bei konkretem Interesse sinnvoll
+- **Kanal bleibt: Telefon** – bei Interesse dann persönlich
 
 ### Outreach-Prozess (beschlossen!)
-1. „Ich hab mir Ihr Google Profil angeschaut – da gibt es Potenzial"
-2. „Darf ich Ihnen ein kostenloses Audit schicken?"
+1. Kurzer Anruf: „Ich hab mir Ihr Google-Profil angeschaut – darf ich Ihnen eine kostenlose Analyse schicken?"
+2. Bei Ja → **sofort Audit erstellen und schicken** (WhatsApp oder Email)
 3. Audit schicken → Vertrauen aufbauen → dann Angebot
-- **NICHT** direkt Preis nennen (Fehler bei Elektro Kuhn!)
+- **NICHT** direkt Preis nennen!
 
 ### Kaltakquise-Einstieg am Telefon
-> „Guten Tag, mein Name ist Mario, ich bin von Trovilo aus Penzberg. Ich mache Local SEO für Betriebe hier in der Region – also ich helfe dabei, dass Betriebe bei Google Maps besser gefunden werden. Ich hab mir kurz Ihr Google-Profil angeschaut und da gibt es ein paar Sachen, die Sie Kunden kosten. Darf ich Ihnen eine kostenlose Kurzanalyse zuschicken?"
+> „Guten Tag, mein Name ist Mario, ich bin von Trovilo aus Penzberg. Ich helfe lokalen Betrieben dabei, bei Google Maps besser gefunden zu werden. Ich hab mir kurz Ihr Google-Profil angeschaut und da gibt es ein paar Sachen, die Sie Kunden kosten. Darf ich Ihnen eine kostenlose Kurzanalyse zuschicken?"
+
+**Bei "Ich hab genug Aufträge":**
+> „Verstehe ich gut. Darf ich fragen – kommt das auch im Winter so, oder gibt es ruhigere Phasen?"
+
+**Bei "Kein Interesse":**
+> „Kein Problem. Darf ich fragen – haben Sie aktuell genug Anfragen über Google?"
 
 ---
 
-## Audit-Template ✅ (HTML-Format – finale Lösung)
+## Zielgruppen – Learnings
 
-**Format: HTML → PDF**
-- Template-Dateien im GitHub: `/audit/trovilo_audit_VORLAGE.html`
-- Verwendung: Im Browser öffnen → Drucken → „Als PDF speichern"
-- Canva-Design (Backup): https://www.canva.com/d/RZT2RR_zH2845aW (noch nicht überzeugend, TODO)
+### ❌ Nicht mehr / weniger
+- Elektriker → überlastet
+- Physiotherapeuten Penzberg → komplett ausgebucht
 
-**Alle Platzhalter ({{VARIABLE}}):**
-- `{{FIRMENNAME}}`, `{{BRANCHE}}`, `{{DATUM}}`
-- `{{SCORE_GESAMT}}` – Gesamtpunktzahl 0-100
-- `{{BEFUND_VOLLSTAENDIGKEIT}}`, `{{SCORE_VOLLSTAENDIGKEIT}}`
-- `{{BEFUND_BEWERTUNGEN}}`, `{{SCORE_BEWERTUNGEN}}`
-- `{{BEFUND_LEISTUNGEN}}`, `{{SCORE_LEISTUNGEN}}`
-- `{{BEFUND_FOTOS}}`, `{{SCORE_FOTOS}}`
-- `{{BEFUND_AKTIVITAET}}`, `{{SCORE_AKTIVITAET}}`
-- `{{MASSNAHME_1_BEREICH}}` bis `{{MASSNAHME_5_BEREICH}}` + `_TEXT`
-- `{{EMPFOHLENES_PAKET}}`, `{{PAKET_PREIS}}`
+### ✅ Vielversprechend (für Atlas-Suche!)
+- **Restaurants & Cafés** → hoher Wettbewerb, Google Maps = Hauptquelle, fühlen Schmerz
+- **Friseure & Kosmetik** → brauchen konstant Neukunden
+- **Maler** → saisonal, nicht immer ausgelastet
+- **Reinigungsfirmen** → fragmentierter Markt, kaum digitale Präsenz
+- **Fahrschulen** → Schüler vergleichen intensiv auf Google
+
+### Atlas-Suchauftrag (läuft gerade!)
+- Branchen: Restaurants, Friseure, Maler, Reinigung, Fahrschulen
+- Gebiet: Bad Tölz, Wolfratshausen, Geretsried (nicht nur Penzberg!)
+- Ziel: 50+ Kandidaten mit messbaren GBP-Schwächen
 
 ---
 
-## Nächste Schritte (Priorität)
-1. 📞 Feodor Schraml – Rückruf abwarten, dann sofort Audit raus (€599 Kandidat, UNCLAIMED!)
-2. 📞 Mike Ebel – nochmal anrufen
-3. 📞 Elektro Kuhn – Follow-up ab ~20.02. mit Audit
-4. 📄 HTML-Audit-Template fertigstellen + ins GitHub pushen
-5. 📋 10+ neue Leads identifizieren
+## Audit-Template
+- Canva: https://www.canva.com/d/RZT2RR_zH2845aW (6 Seiten, noch nicht überzeugend)
+- **TODO: Im nächsten Chat überarbeiten** – gewünschte Struktur:
+  - Seite 1: Deckblatt (Firmenname, Datum, Trovilo-Branding, Teal #00A896)
+  - Seite 2: Profil-Bewertung (5 Kategorien, Gesamtscore %, CTA)
+  - Seite 3: Top 3 Verbesserungen + Prognose-Tabelle
+  - Seite 4: Warum Trovilo + Pakete (€299/€599) + Kontakt
+
+## Nächste Schritte
+1. 📊 Atlas-Ergebnisse auswerten → neue Lead-Liste aufbauen
+2. 📞 Morgen neue Runde Anrufe – andere Branchen (Restaurants, Friseure, Maler)
+3. 📞 Feodor Schraml – Rückruf abwarten
+4. 📞 Mike Ebel – nochmal anrufen
+5. 📞 Elektro Kuhn – Follow-up ab ~20.02.
+6. 🎨 Audit-Template in Canva fertigstellen
 
 ## Wichtige Links
 - Website: https://trovilo.de
 - GitHub: https://github.com/Ruzulo/Trovilo
-- **Lead Sheet: https://docs.google.com/spreadsheets/d/1Iphq9TQ00OO8Mg-ktNSmWKWyzQ9z0DFgXTnSIAuBNvo**
+- Lead Sheet: https://docs.google.com/spreadsheets/d/1Iphq9TQ00OO8Mg-ktNSmWKWyzQ9z0DFgXTnSIAuBNvo
 - Canva Audit: https://www.canva.com/d/RZT2RR_zH2845aW
 
 ## Preise
-- Optimierung: €299 einmalig
-- Kickstart: €599 einmalig
-- Premium: €999 einmalig
+- Optimierung: €299 einmalig (exkl. MwSt.)
+- Kickstart: €599 einmalig (exkl. MwSt.)
+- Premium: €999 einmalig (exkl. MwSt.)
 - Betreuung Basis: €75/Monat
 - Betreuung Aktiv: €149/Monat
