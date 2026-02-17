@@ -1,4 +1,4 @@
-/* Trovilo Website CSS - v2.2 */
+/* Trovilo Website CSS - v2.3 */
 
 /* ==================== */
 /* RESET & BASE STYLES  */
@@ -11,7 +11,6 @@
 }
 
 :root {
-    /* Colors */
     --primary-color: #00A896;
     --primary-dark: #008577;
     --secondary-color: #02C39A;
@@ -23,15 +22,11 @@
     --border-color: #e0e0e0;
     --success-color: #28a745;
     --warning-color: #ffc107;
-    
-    /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 3rem;
     --spacing-xl: 5rem;
-    
-    /* Typography */
     --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --font-size-base: 16px;
     --line-height-base: 1.8;
@@ -76,12 +71,9 @@ body {
     color: var(--primary-color);
     font-weight: 800;
     letter-spacing: -0.5px;
-}
-
-.logo .tagline {
-    font-size: 0.85rem;
-    color: var(--text-gray);
-    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .nav {
@@ -98,9 +90,7 @@ body {
     font-size: 0.95rem;
 }
 
-.nav a:hover {
-    color: var(--primary-color);
-}
+.nav a:hover { color: var(--primary-color); }
 
 /* ==================== */
 /* HERO SECTION         */
@@ -156,7 +146,7 @@ body {
 /* BUTTONS              */
 /* ==================== */
 
-.cta-button, 
+.cta-button,
 .cta-button-large,
 .cta-button-outline,
 .cta-button-filled {
@@ -202,9 +192,7 @@ body {
     color: white;
 }
 
-.button-icon {
-    margin-right: 0.5rem;
-}
+.button-icon { margin-right: 0.5rem; }
 
 /* ==================== */
 /* QUICK AUDIT SECTION  */
@@ -230,7 +218,6 @@ body {
     line-height: 1.7;
 }
 
-/* NEW: Audit Checklist Styles */
 .audit-checklist {
     background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
     padding: 3rem;
@@ -247,11 +234,32 @@ body {
     margin-bottom: 2.5rem;
 }
 
+/* 3+2 centered layout */
 .checklist-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
     margin-bottom: 2rem;
+}
+
+.checklist-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.checklist-row .checklist-item {
+    flex: 0 0 calc(33.333% - 1rem);
+    max-width: 280px;
+}
+
+.checklist-row-center {
+    justify-content: center;
+}
+
+.checklist-row-center .checklist-item {
+    flex: 0 0 calc(33.333% - 1rem);
+    max-width: 280px;
 }
 
 .checklist-item {
@@ -333,10 +341,7 @@ body {
     gap: var(--spacing-sm);
 }
 
-.step {
-    text-align: center;
-    flex: 1;
-}
+.step { text-align: center; flex: 1; }
 
 .step-number {
     display: block;
@@ -350,10 +355,7 @@ body {
     margin: 0 auto var(--spacing-xs) auto;
 }
 
-.step p {
-    font-size: 0.9rem;
-    color: var(--text-gray);
-}
+.step p { font-size: 0.9rem; color: var(--text-gray); }
 
 .audit-form {
     display: flex;
@@ -437,10 +439,7 @@ body {
     font-weight: 700;
 }
 
-.column p {
-    color: var(--text-gray);
-    line-height: 1.8;
-}
+.column p { color: var(--text-gray); line-height: 1.8; }
 
 /* ==================== */
 /* ABOUT SECTION        */
@@ -490,10 +489,7 @@ body {
     border-color: var(--primary-color);
 }
 
-.contact-icon {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-sm);
-}
+.contact-icon { font-size: 3rem; margin-bottom: var(--spacing-sm); }
 
 .contact-option h4 {
     font-size: 1.2rem;
@@ -509,9 +505,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.contact-option a:hover {
-    color: var(--primary-dark);
-}
+.contact-option a:hover { color: var(--primary-dark); }
 
 /* ==================== */
 /* PRICING              */
@@ -600,8 +594,18 @@ body {
     font-size: 1.1rem;
     font-weight: 400;
     color: var(--text-gray);
+    -webkit-text-fill-color: var(--text-gray);
     display: block;
     margin-top: 0.25rem;
+}
+
+.price-vat {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-light);
+    -webkit-text-fill-color: var(--text-light);
+    margin-top: 0.1rem;
 }
 
 .features {
@@ -618,9 +622,7 @@ body {
     line-height: 1.6;
 }
 
-.features li:last-child {
-    border-bottom: none;
-}
+.features li:last-child { border-bottom: none; }
 
 .for-whom {
     font-size: 1rem;
@@ -684,13 +686,8 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.status-before {
-    border-left-color: var(--warning-color);
-}
-
-.status-after {
-    border-left-color: var(--success-color);
-}
+.status-before { border-left-color: var(--warning-color); }
+.status-after { border-left-color: var(--success-color); }
 
 .results-box {
     background-color: var(--bg-white);
@@ -810,9 +807,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.faq-item:hover {
-    border-color: var(--primary-color);
-}
+.faq-item:hover { border-color: var(--primary-color); }
 
 .faq-question {
     width: 100%;
@@ -830,9 +825,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.faq-question:hover {
-    background-color: var(--bg-light);
-}
+.faq-question:hover { background-color: var(--bg-light); }
 
 .faq-icon {
     font-size: 1.8rem;
@@ -841,9 +834,7 @@ body {
     font-weight: 300;
 }
 
-.faq-item.active .faq-icon {
-    transform: rotate(45deg);
-}
+.faq-item.active .faq-icon { transform: rotate(45deg); }
 
 .faq-answer {
     max-height: 0;
@@ -874,10 +865,7 @@ body {
     line-height: 1.6;
 }
 
-.faq-answer strong {
-    color: var(--text-dark);
-    font-weight: 700;
-}
+.faq-answer strong { color: var(--text-dark); font-weight: 700; }
 
 /* ==================== */
 /* FINAL CTA            */
@@ -933,15 +921,9 @@ body {
     font-weight: 800;
 }
 
-.footer-logo p {
-    color: #999;
-    font-size: 0.95rem;
-}
+.footer-logo p { color: #999; font-size: 0.95rem; }
 
-.footer-contact p {
-    margin-bottom: var(--spacing-xs);
-    font-size: 0.95rem;
-}
+.footer-contact p { margin-bottom: var(--spacing-xs); font-size: 0.95rem; }
 
 .footer-contact a {
     color: var(--primary-color);
@@ -949,9 +931,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.footer-contact a:hover {
-    color: var(--secondary-color);
-}
+.footer-contact a:hover { color: var(--secondary-color); }
 
 .footer-legal p {
     margin-bottom: var(--spacing-sm);
@@ -959,10 +939,7 @@ body {
     color: #999;
 }
 
-.footer-links {
-    display: flex;
-    gap: var(--spacing-md);
-}
+.footer-links { display: flex; gap: var(--spacing-md); }
 
 .footer-links a {
     color: #999;
@@ -971,85 +948,60 @@ body {
     transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-    color: white;
-}
+.footer-links a:hover { color: white; }
 
 /* ==================== */
 /* RESPONSIVE           */
 /* ==================== */
 
 @media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2.25rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .hero-benefits {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-    
-    .nav {
-        display: none;
-    }
-    
+    .hero h2 { font-size: 2.25rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+    .hero-benefits { flex-direction: column; gap: var(--spacing-sm); }
+    .nav { display: none; }
+
     .three-columns,
-    .pricing-grid,
     .audit-options,
     .regional-benefits {
         grid-template-columns: 1fr;
     }
-    
-    .cta-buttons {
-        flex-direction: column;
+
+    /* Fix white space: pricing grid must be single column on mobile */
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-md);
     }
-    
+
+    .cta-buttons { flex-direction: column; }
+
     .cta-button-outline,
-    .cta-button-filled {
-        width: 100%;
-    }
-    
-    h2 {
-        font-size: 2.25rem !important;
-    }
-    
-    .audit-steps {
+    .cta-button-filled { width: 100%; }
+
+    h2 { font-size: 2.25rem !important; }
+
+    .audit-steps { flex-direction: column; }
+
+    /* Checklist 3+2 → stacked on mobile */
+    .audit-checklist { padding: 2rem 1.5rem; }
+    .audit-checklist h3 { font-size: 1.5rem; }
+
+    .checklist-row {
         flex-direction: column;
+        align-items: center;
     }
-    
-    /* Audit Checklist Responsive */
-    .audit-checklist {
-        padding: 2rem 1.5rem;
+
+    .checklist-row .checklist-item,
+    .checklist-row-center .checklist-item {
+        flex: none;
+        width: 100%;
+        max-width: 400px;
     }
-    
-    .checklist-categories {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .checklist-item {
-        padding: 1.25rem;
-    }
-    
-    .audit-checklist h3 {
-        font-size: 1.5rem;
-    }
+
+    .checklist-item { padding: 1.25rem; }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0 var(--spacing-sm);
-    }
-    
-    .hero h2 {
-        font-size: 2rem;
-    }
-    
-    :root {
-        --spacing-xl: 3rem;
-    }
+    .container { padding: 0 var(--spacing-sm); }
+    .hero h2 { font-size: 2rem; }
+    :root { --spacing-xl: 3rem; }
 }
