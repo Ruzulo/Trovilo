@@ -29,19 +29,20 @@
 2. "Darf ich Ihnen ein kostenloses Audit schicken?"
 3. Audit zuschicken → Vertrauen aufbauen → dann Angebot
 
-### Audit-Template
-- Canva Design gespeichert: https://www.canva.com/d/RZT2RR_zH2845aW
-- 6 Seiten (sollten 4 sein) – Design überzeugt noch nicht
-- **TODO: Im nächsten Chat überarbeiten**
-- Gewünschte Struktur:
-  - Seite 1: Deckblatt (Firmenname, Datum, Trovilo-Branding)
-  - Seite 2: Profil-Bewertung (5 Kategorien, Gesamtscore %, CTA "Sie verlieren Anfragen!")
-  - Seite 3: Top 3 Verbesserungen + Prognose-Tabelle (Aktuell vs. Nach Optimierung)
-  - Seite 4: Warum Trovilo + Pakete (299€/599€) + Kontakt
+### Audit-Template ✅
+- **Format: Google Doc** (nicht mehr Canva – besser für WhatsApp & Handy-Lesbarkeit)
+- Google Doc: https://docs.google.com/document/d/1Bpt9GbRgAQoc1LbtUpgw7Cn9rcDc8wtnRSmGcfABKHI/edit
+- Canva Design (eingefroren): https://www.canva.com/d/RZT2RR_zH2845aW
+- Struktur (4 Abschnitte):
+  - Abschnitt 1: Deckblatt (Firmenname, Datum, Trovilo-Branding)
+  - Abschnitt 2: Profil-Bewertung (5 Kategorien, Gesamtscore /100, CTA)
+  - Abschnitt 3: Top 3 Verbesserungen + Prognose-Tabelle
+  - Abschnitt 4: Warum Trovilo + Pakete (299€/599€/999€) + Kontakt
 - Trovilo-Farbe: Teal #00A896
+- **TODO: Telefonnummer + Email im Template eintragen**
 
 ## Nächste Schritte (Priorität)
-1. 🎨 Audit-Template in Canva überarbeiten (4 Seiten, sauber)
+1. 📝 Audit-Template ausfüllen: Telefonnummer + Email eintragen
 2. 📋 10+ neue Leads identifizieren (Google Maps screenen)
 3. 📞 Elektro Kuhn Follow-up mit Audit (ab ~20.02.)
 4. 📞 Nemanja – warten auf Rückmeldung
@@ -50,7 +51,7 @@
 - Website: https://trovilo.de
 - GitHub: https://github.com/Ruzulo/Trovilo
 - Google Sheet Leads: https://docs.google.com/spreadsheets/d/1sa6Gx0cMYbqYWU6wVE1tJWdql9k-tkAKtVqQRbj2CoE
-- Canva Audit-Template: https://www.canva.com/d/RZT2RR_zH2845aW
+- Audit-Template (Google Doc): https://docs.google.com/document/d/1Bpt9GbRgAQoc1LbtUpgw7Cn9rcDc8wtnRSmGcfABKHI/edit
 - Ionos FTP: manuell (GitHub → PC → FTP)
 
 ## Preise
