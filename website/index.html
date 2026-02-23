@@ -3,44 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehr Kunden für Ihr Geschäft | Local SEO Penzberg | Trovilo</title>
-    <meta name="description" content="Local SEO für Handwerker, Ärzte & Cafés in Penzberg, Bad Tölz & Umgebung. Mehr Kunden über Google Maps. Transparente Preise ab €299. Kostenloser Check!">
-    <meta name="keywords" content="local seo penzberg, google business profil optimierung, seo bad tölz, handwerker marketing">
+    <title>Trovilo – KI-Experiment: Local SEO Service in 3 Wochen aufgebaut</title>
+    <meta name="description" content="Trovilo ist ein KI-Experiment: Wie schnell kann man mit KI-Tools einen kompletten Local SEO Service aufbauen? Ergebnis, Learnings und Tech-Stack.">
+    <meta name="keywords" content="ki experiment, local seo, ai startup, portfolio, trovilo">
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='36' r='26' fill='none' stroke='%2300A896' stroke-width='10'/><circle cx='50' cy='36' r='11' fill='%2300A896'/><path d='M50 62 L50 88' stroke='%2300A896' stroke-width='10' stroke-linecap='round' fill='none'/></svg>">
     
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Trovilo",
-      "description": "Local SEO für Handwerker, Ärzte und lokale Businesses in Penzberg und Umgebung",
-      "url": "https://trovilo.de",
-      "telephone": "+4915129832946",
-      "email": "servus@trovilo.de",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Penzberg",
-        "addressRegion": "Bayern",
-        "postalCode": "82377",
-        "addressCountry": "DE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 47.7519,
-        "longitude": 11.3762
-      },
-      "areaServed": ["Penzberg", "Bad Tölz", "Wolfratshausen", "Geretsried"],
-      "priceRange": "€€",
-      "openingHours": "Mo-Fr 09:00-18:00"
-    }
-    </script>
-    
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* === SHOWCASE OVERLAY STYLES === */
+        .showcase-banner {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 0.75rem 0;
+            border-bottom: 3px solid #00A896;
+        }
+        .showcase-banner-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .showcase-badge {
+            background: linear-gradient(135deg, #00A896 0%, #02C39A 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .showcase-banner p { font-size: 0.9rem; color: #ccc; margin: 0; line-height: 1.5; }
+        .showcase-banner strong { color: white; }
+        .showcase-banner a { color: #00A896; text-decoration: none; font-weight: 600; white-space: nowrap; }
+        .showcase-banner a:hover { color: #02C39A; }
+        .showcase-hint { font-size: 0.95rem; color: #999; margin-top: 2rem; font-style: italic; }
+        .showcase-info-box {
+            background: linear-gradient(135deg, #f0fdfa 0%, #e0f7fa 100%);
+            border: 2px solid #00A896;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        .showcase-info-box p { color: #333; font-size: 1.05rem; line-height: 1.7; }
+        .pricing-button-disabled {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            background: #e0e0e0;
+            color: #999;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: default;
+        }
+        .pricing .price { font-size: 1.8rem !important; }
+        @media (max-width: 768px) {
+            .showcase-banner-content { flex-direction: column; text-align: center; gap: 0.5rem; }
+            .showcase-banner p { font-size: 0.8rem; }
+            .showcase-info-box { margin: 1.5rem 1rem; padding: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
+    <!-- ============================================ -->
+    <!-- SHOWCASE BANNER                              -->
+    <!-- ============================================ -->
+    <div class="showcase-banner">
+        <div class="container">
+            <div class="showcase-banner-content">
+                <span class="showcase-badge">🧪 KI-Experiment</span>
+                <p>Diese Website ist ein <strong>Portfolio-Showcase</strong> – erstellt als KI-Experiment in wenigen Tagen. 
+                Kein aktives Geschäft. <a href="https://github.com/Ruzulo/Trovilo" target="_blank">→ Zum Tech-Stack auf GitHub</a></p>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -51,10 +92,10 @@
             </div>
             <nav class="nav">
                 <a href="#funktioniert">So funktioniert's</a>
-                <a href="#quick-audit">Kostenloser Check</a>
-                <a href="#preise">Preise</a>
+                <a href="#quick-audit">Audit-Beispiel</a>
+                <a href="#preise">Pakete</a>
                 <a href="#faq">FAQ</a>
-                <a href="#kontakt" class="cta-button">Kontakt</a>
+                <a href="https://github.com/Ruzulo/Trovilo" target="_blank" class="cta-button">GitHub →</a>
             </nav>
         </div>
     </header>
@@ -80,7 +121,7 @@
                 </div>
             </div>
             
-            <a href="#quick-audit" class="cta-button-large">Kostenlosen Check starten</a>
+            <p class="showcase-hint">⬇ So würde die fertige Produktseite aussehen</p>
         </div>
     </section>
 
@@ -88,10 +129,10 @@
     <section id="quick-audit" class="quick-audit">
         <div class="container">
             <h2>🔍 Kostenloser Google-Check in 2 Minuten</h2>
-            <p class="subtitle">Schicken Sie mir den Link zu Ihrem Google Business Profil – ich schaue mir Ihr Profil an und sende Ihnen innerhalb von 24h ein kurzes Video per WhatsApp (3-5 Min.) mit den 5 größten Verbesserungen.</p>
+            <p class="subtitle">Der Kunde schickt den Link zu seinem Google Business Profil – innerhalb von 24h erhält er ein kurzes Video per WhatsApp (3-5 Min.) mit den 5 größten Verbesserungen.</p>
             
             <div class="audit-checklist">
-                <h3>Was wir in Ihrem kostenlosen Check prüfen:</h3>
+                <h3>Was im kostenlosen Check geprüft wird:</h3>
                 <div class="checklist-categories">
                     <div class="checklist-row">
                         <div class="checklist-item">
@@ -123,28 +164,12 @@
                         </div>
                     </div>
                 </div>
-                <p class="checklist-note">Jede Kategorie wird bewertet (1-5 Punkte) – Sie sehen sofort, wo Sie stehen!</p>
+                <p class="checklist-note">Jede Kategorie wird bewertet (1-5 Punkte) – der Kunde sieht sofort, wo er steht!</p>
             </div>
             
-            <div class="audit-options">
-                <div class="audit-option">
-                    <h3>💬 Per WhatsApp</h3>
-                    <p>Schreiben Sie uns per WhatsApp für eine kostenlose Überprüfung Ihres Google Profils. Einfach Ihren Google Maps Link mitschicken – wir melden uns innerhalb von 24h!</p>
-                    <a href="https://wa.me/4915129832946?text=Hallo%20Trovilo%2C%20hier%20ist%20mein%20Google%20Profil%20für%20den%20kostenlosen%20Check%3A%20" 
-                       class="cta-button-large" target="_blank">
-                        💬 Jetzt per WhatsApp schreiben
-                    </a>
-                </div>
-                
-                <div class="audit-option">
-                    <h3>📧 Per Email</h3>
-                    <form action="https://formspree.io/f/mbdaojby" method="POST" class="audit-form">
-                        <input type="text" name="business-name" placeholder="Firmenname" required>
-                        <input type="url" name="google-profile-url" placeholder="Google Maps Link (z.B. https://maps.app.goo.gl/...)" required>
-                        <input type="email" name="email" placeholder="Ihre E-Mail" required>
-                        <button type="submit" class="cta-button">Kostenlos prüfen</button>
-                    </form>
-                </div>
+            <div class="showcase-info-box">
+                <p>📋 <strong>Audit-Erstellung:</strong> Der komplette Audit wird KI-gestützt generiert (Claude API + eigene Prompts). Von Google-Maps-Link bis fertigem Report in unter 10 Minuten.</p>
+                <a href="https://github.com/Ruzulo/Trovilo" target="_blank" class="cta-button" style="margin-top: 1rem;">Details auf GitHub →</a>
             </div>
             
             <p class="trust-line">✓ Kein Spam · ✓ Keine Kosten · ✓ Ergebnis in 24h</p>
@@ -178,23 +203,23 @@
     <!-- About -->
     <section class="about">
         <div class="container">
-            <h2>Erfahren Sie mehr über Trovilo</h2>
-            <p class="about-text">Als Local-SEO-Spezialist aus Penzberg helfe ich KMU in der Region mit bewährten Optimierungen. Kein Callcenter, keine Agentur-Preise, keine langen Vertragslaufzeiten. Persönlich, effizient, fair.</p>
+            <h2>Über dieses Experiment</h2>
+            <p class="about-text">Trovilo ist ein KI-Experiment: In wenigen Tagen habe ich als Solo-Entwickler mit KI-Tools (Claude, n8n, Canva) einen kompletten Local-SEO-Service aufgebaut – von der Website über automatisierte Audits bis zum Go-to-Market-Konzept. Gesamtkosten: unter €50/Monat. Diese Seite dokumentiert das Ergebnis.</p>
             <div class="contact-options">
                 <div class="contact-option">
-                    <div class="contact-icon">📧</div>
-                    <h4>Email</h4>
-                    <a href="mailto:servus@trovilo.de">servus@trovilo.de</a>
+                    <div class="contact-icon">🧪</div>
+                    <h4>Tech-Stack</h4>
+                    <a href="https://github.com/Ruzulo/Trovilo" target="_blank">GitHub Repository</a>
                 </div>
                 <div class="contact-option">
-                    <div class="contact-icon">📱</div>
-                    <h4>Telefon</h4>
-                    <a href="tel:+4915129832946">0151 2983 2946</a>
+                    <div class="contact-icon">🛠️</div>
+                    <h4>Tools</h4>
+                    <span style="color: var(--primary-color); font-weight: 600;">Claude API · n8n · Canva</span>
                 </div>
                 <div class="contact-option">
-                    <div class="contact-icon">💬</div>
-                    <h4>WhatsApp</h4>
-                    <a href="https://wa.me/4915129832946?text=Hallo%20Trovilo,%20ich%20interessiere%20mich%20für%20Local%20SEO" target="_blank">Chat starten</a>
+                    <div class="contact-icon">⏱️</div>
+                    <h4>Aufbauzeit</h4>
+                    <span style="color: var(--primary-color); font-weight: 600;">~3 Wochen (Sabbatical)</span>
                 </div>
             </div>
         </div>
@@ -203,15 +228,15 @@
     <!-- Pricing -->
     <section id="preise" class="pricing">
         <div class="container">
-            <h2>Transparente Preise</h2>
-            <p class="section-subtitle">Kein Abo. Keine versteckten Kosten. Faire Festpreise.</p>
+            <h2>Paket-Konzept</h2>
+            <p class="section-subtitle">So hätte die Preisstruktur aussehen können. Keine versteckten Kosten, faire Festpreise.</p>
             
             <h3 style="text-align: center; margin: 40px 0 30px; color: var(--primary-color); font-size: 1.5rem;">Einmalige Pakete</h3>
             
             <div class="pricing-grid" style="max-width: 1100px;">
                 <div class="pricing-card">
                     <h3>Optimierung</h3>
-                    <div class="price">€299<span class="price-period">einmalig · <span class="price-vat">exkl. MwSt.</span></span></div>
+                    <div class="price">auf Anfrage<span class="price-period">einmalig</span></div>
                     <ul class="features">
                         <li>✓ Profil-Check & Kategorien fixen</li>
                         <li>✓ Beschreibung optimieren</li>
@@ -220,13 +245,13 @@
                         <li>✓ 10-15 FAQs erstellen</li>
                     </ul>
                     <p class="for-whom">Für: Bestehende Profile, die optimiert werden müssen</p>
-                    <a href="#kontakt" class="pricing-button">Jetzt anfragen</a>
+                    <span class="pricing-button pricing-button-disabled">Nur zur Veranschaulichung</span>
                 </div>
                 
                 <div class="pricing-card featured">
-                    <div class="badge">Empfohlen</div>
+                    <div class="badge">Beispiel</div>
                     <h3>Kickstart</h3>
-                    <div class="price">€599<span class="price-period">einmalig · <span class="price-vat">exkl. MwSt.</span></span></div>
+                    <div class="price">auf Anfrage<span class="price-period">einmalig</span></div>
                     <ul class="features">
                         <li>✓ Alles aus "Optimierung"</li>
                         <li>✓ Komplette Profil-Verifikation</li>
@@ -236,12 +261,12 @@
                         <li>✓ 2x Follow-up nach 2+4 Wochen</li>
                     </ul>
                     <p class="for-whom">Für: Neue Profile oder größere Lücken</p>
-                    <a href="#kontakt" class="pricing-button">Jetzt anfragen</a>
+                    <span class="pricing-button pricing-button-disabled">Nur zur Veranschaulichung</span>
                 </div>
                 
                 <div class="pricing-card">
                     <h3>Premium</h3>
-                    <div class="price">€999<span class="price-period">einmalig · <span class="price-vat">exkl. MwSt.</span></span></div>
+                    <div class="price">auf Anfrage<span class="price-period">einmalig</span></div>
                     <ul class="features">
                         <li>✓ Alles aus "Kickstart"</li>
                         <li>✓ <strong>3 Monate Content-Betreuung</strong></li>
@@ -251,7 +276,7 @@
                         <li>✓ Multi-Location Setup möglich</li>
                     </ul>
                     <p class="for-whom">Für: Ambitionierte Businesses + Multi-Location</p>
-                    <a href="#kontakt" class="pricing-button">Jetzt anfragen</a>
+                    <span class="pricing-button pricing-button-disabled">Nur zur Veranschaulichung</span>
                 </div>
             </div>
             
@@ -260,20 +285,20 @@
             <div class="pricing-grid" style="max-width: 900px; margin: 0 auto;">
                 <div class="pricing-card">
                     <h3>Betreuung Basis</h3>
-                    <div class="price">€75<span class="price-period">pro Monat · <span class="price-vat">exkl. MwSt.</span></span></div>
+                    <div class="price">auf Anfrage<span class="price-period">pro Monat</span></div>
                     <ul class="features">
                         <li>✓ Review Monitoring & Antworten</li>
                         <li>✓ Monatlicher Report</li>
                         <li>✓ Spam-Meldung</li>
                     </ul>
                     <p class="for-whom">Für: "Set & Forget" - Autopilot-Modus</p>
-                    <a href="#kontakt" class="pricing-button">Jetzt anfragen</a>
+                    <span class="pricing-button pricing-button-disabled">Nur zur Veranschaulichung</span>
                 </div>
                 
                 <div class="pricing-card featured">
-                    <div class="badge">Beliebt</div>
+                    <div class="badge">Beispiel</div>
                     <h3>Betreuung Aktiv</h3>
-                    <div class="price">€149<span class="price-period">pro Monat · <span class="price-vat">exkl. MwSt.</span></span></div>
+                    <div class="price">auf Anfrage<span class="price-period">pro Monat</span></div>
                     <ul class="features">
                         <li>✓ Alles aus "Basis"</li>
                         <li>✓ 4 Google Posts pro Monat</li>
@@ -281,12 +306,12 @@
                         <li>✓ Foto-Management (1x/Monat)</li>
                     </ul>
                     <p class="for-whom">Für: Aktive Optimierung + Wachstum</p>
-                    <a href="#kontakt" class="pricing-button">Jetzt anfragen</a>
+                    <span class="pricing-button pricing-button-disabled">Nur zur Veranschaulichung</span>
                 </div>
             </div>
             
             <p style="text-align: center; margin-top: 40px; color: #666; font-size: 0.95rem;">
-                <strong>Hinweis:</strong> Betreuungspakete sind optional und monatlich kündbar. Keine Mindestlaufzeit!
+                <strong>Hinweis:</strong> Dies ist ein Paket-Konzept zur Veranschaulichung – kein aktives Angebot.
             </p>
         </div>
     </section>
@@ -327,7 +352,6 @@
                         </ul>
                         <p class="case-study-note"><small>*Bei durchschnittlichem Auftragswert von €350 (Reparaturen/Wartung).</small></p>
                     </div>
-                    <a href="#quick-audit" class="cta-button-large">Kostenlosen Check anfordern</a>
                 </div>
             </div>
         </div>
@@ -337,9 +361,9 @@
     <section class="regional">
         <div class="container">
             <h2>Regional verwurzelt</h2>
-            <p>Wir arbeiten ausschließlich in der Region Penzberg, Bad Tölz, Wolfratshausen und Geretsried (max. 50km Radius).</p>
+            <p>Das Konzept war ausschließlich auf die Region Penzberg, Bad Tölz, Wolfratshausen und Geretsried ausgelegt (max. 50km Radius).</p>
             <div class="regional-benefits">
-                <div class="regional-benefit"><span class="checkmark">✓</span><span>Wir kennen die lokale Konkurrenz</span></div>
+                <div class="regional-benefit"><span class="checkmark">✓</span><span>Lokale Konkurrenzanalyse</span></div>
                 <div class="regional-benefit"><span class="checkmark">✓</span><span>Persönliche Treffen möglich</span></div>
                 <div class="regional-benefit"><span class="checkmark">✓</span><span>Schnelle Reaktionszeiten</span></div>
                 <div class="regional-benefit"><span class="checkmark">✓</span><span>Faire Preise ohne Großstadt-Aufschlag</span></div>
@@ -374,33 +398,27 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question"><span>Muss ich einen Vertrag abschließen?</span><span class="faq-icon">+</span></button>
-                    <div class="faq-answer"><p><strong>Nein!</strong> Unsere Pakete sind einmalige Festpreise ohne Vertragsbindung. Laufende Betreuung ab €75/Monat ist optional und monatlich kündbar.</p></div>
+                    <div class="faq-answer"><p><strong>Nein!</strong> Die Pakete sind einmalige Festpreise ohne Vertragsbindung. Laufende Betreuung ist optional und monatlich kündbar.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question"><span>Muss ich technisch fit sein?</span><span class="faq-icon">+</span></button>
-                    <div class="faq-answer"><p><strong>Nein!</strong> Ich übernehme 95% der Arbeit. Sie müssen nur Zugang zum Google Business Profil geben, ein paar Fotos bereitstellen und Kunden um Bewertungen bitten (mit meinen Vorlagen – sehr einfach).</p></div>
+                    <div class="faq-answer"><p><strong>Nein!</strong> 95% der Arbeit wird übernommen. Der Kunde muss nur Zugang zum Google Business Profil geben, ein paar Fotos bereitstellen und Kunden um Bewertungen bitten (mit Vorlagen – sehr einfach).</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question"><span>Was unterscheidet Sie von großen Agenturen?</span><span class="faq-icon">+</span></button>
-                    <div class="faq-answer"><p>Lokal, schnell, persönlich: Kein Callcenter, faire Preise, persönliche Treffen möglich. Große Agenturen verlangen €1.000-3.000/Monat für das gleiche, was wir einmalig für €299-999 machen.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question"><span>Kann ich Referenzen sehen?</span><span class="faq-icon">+</span></button>
-                    <div class="faq-answer"><p>Wir sind neu gestartet und bauen aktuell unsere ersten Referenzen auf. Deshalb bieten wir den <strong>kostenlosen Video-Check</strong> an – testen Sie unsere Expertise ohne Risiko. Ab März 2026 zeigen wir hier echte Vorher-Nachher-Beispiele.</p></div>
+                    <button class="faq-question"><span>Was unterscheidet das von großen Agenturen?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Lokal, schnell, persönlich: Kein Callcenter, faire Preise, persönliche Treffen möglich. Große Agenturen verlangen €1.000-3.000/Monat für das gleiche, was hier einmalig als Festpreis angeboten werden könnte.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section id="kontakt" class="final-cta">
+    <!-- Final Section - Experiment Summary instead of CTA -->
+    <section id="fazit" class="final-cta">
         <div class="container">
-            <h2>Jetzt kostenloses Erstgespräch vereinbaren</h2>
-            <p>Schicken Sie uns eine kurze Nachricht - wir melden uns innerhalb von 24 Stunden mit einem kostenlosen Check Ihres Google Business Profils.</p>
+            <h2>Das Experiment im Überblick</h2>
+            <p>In wenigen Tagen mit KI-Tools ein komplettes Local-SEO-Business aufgebaut: Website, automatisierte Audits, Pricing-Modell, Go-to-Market-Strategie. Gesamtkosten: unter €50/Monat.</p>
             <div class="cta-buttons">
-                <a href="mailto:servus@trovilo.de" class="cta-button-outline"><span class="button-icon">📧</span>Email schreiben</a>
-                <a href="tel:+4915129832946" class="cta-button-outline"><span class="button-icon">📱</span>Anrufen</a>
-                <a href="https://wa.me/4915129832946?text=Hallo%20Trovilo,%20ich%20interessiere%20mich%20für%20Local%20SEO" target="_blank" class="cta-button-filled"><span class="button-icon">💬</span>WhatsApp</a>
+                <a href="https://github.com/Ruzulo/Trovilo" target="_blank" class="cta-button-filled"><span class="button-icon">💻</span>GitHub Repository</a>
             </div>
         </div>
     </section>
@@ -411,12 +429,12 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <h3>TROVILO</h3>
-                    <p>Local SEO Penzberg</p>
+                    <p>KI-Experiment · Portfolio-Showcase</p>
                 </div>
                 <div class="footer-contact">
-                    <p>Email: <a href="mailto:servus@trovilo.de">servus@trovilo.de</a></p>
-                    <p>Telefon: <a href="tel:+4915129832946">0151 2983 2946</a></p>
-                    <p>WhatsApp: <a href="https://wa.me/4915129832946" target="_blank">0151 2983 2946</a></p>
+                    <p>Ein Projekt von Mario Grüttner</p>
+                    <p>Erstellt: Februar 2026</p>
+                    <p>Tech: Claude API · n8n · Canva</p>
                 </div>
                 <div class="footer-legal">
                     <p>&copy; 2026 Trovilo. Alle Rechte vorbehalten.</p>
