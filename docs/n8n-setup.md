@@ -12,7 +12,6 @@ Diese Anleitung erklärt, wie die n8n-Infrastruktur für Trovilo aufgesetzt ist.
 - **Zugriff:** Web-UI + API
 
 ### n8n VPS (Optional)
-- **URL:** http://46.225.16.99:5678
 - **Verwendung:** Experimente, Prototyping
 - **Zugriff:** Nur lokal/VPN
 
@@ -32,10 +31,10 @@ npm install -g @n8n/mcp-server
     "n8n-cloud-full": {
       "command": "node",
       "args": [
-        "C:\\Users\\marco\\AppData\\Roaming\\Claude\\n8n_mcp_server\\server.js"
+        "<PATH_TO>/n8n_mcp_server/server.js"
       ],
       "env": {
-        "N8N_HOST": "https://trovilo.app.n8n.cloud",
+        "N8N_HOST": "https://<YOUR_INSTANCE>.app.n8n.cloud",
         "N8N_API_KEY": "YOUR_API_KEY_HERE"
       }
     }
@@ -155,4 +154,3 @@ try {
 
 - **n8n Docs:** https://docs.n8n.io
 - **Anthropic Docs:** https://docs.anthropic.com
-- **Trovilo Internal:** Siehe Skill `/mnt/skills/user/trovilo-setup/`
