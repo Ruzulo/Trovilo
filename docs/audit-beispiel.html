@@ -40,86 +40,389 @@
   .audit-showcase-banner a { color: #02C39A; text-decoration: none; font-weight: 600; }
   .audit-showcase-banner a:hover { text-decoration: underline; }
 
-  .page { width: 210mm; min-height: 297mm; background: white; margin: 0 auto 24px; position: relative; display: flex; flex-direction: column; overflow: hidden; }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    margin: 0 auto 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
   .page-top-bar { height: 7px; background: var(--teal); flex-shrink: 0; }
   .page-bottom-bar { height: 7px; background: var(--teal); flex-shrink: 0; }
-  .page-content { padding: 22px 28px 16px; flex: 1; display: flex; flex-direction: column; }
+
+  .page-content {
+    padding: 22px 28px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
   .spacer { flex: 1; min-height: 8px; }
-  .page-footer { font-size: 11.5px; color: var(--text-light); text-align: center; padding: 7px 28px; border-top: 1px solid var(--border); flex-shrink: 0; }
-  .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1.5px solid var(--border); }
-  .logo { font-family: 'DM Mono', 'Courier New', monospace; font-size: 22px; font-weight: 600; color: var(--teal); letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+
+  .page-footer {
+    font-size: 11.5px;
+    color: var(--text-light);
+    text-align: center;
+    padding: 7px 28px;
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1.5px solid var(--border);
+  }
+
+  .logo {
+    font-family: 'DM Mono', 'Courier New', monospace;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
   .page-title { text-align: right; }
   .page-title .main-title { font-size: 14px; font-weight: 700; color: var(--text); }
   .page-title .sub-title { font-size: 11.5px; color: var(--text-light); margin-top: 2px; }
 
-  .hero { display: flex; flex-direction: row; gap: 14px; margin-bottom: 14px; }
+  .hero {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
   .hero > * { flex: 1 1 0; min-width: 0; }
 
-  .business-info { background: var(--teal-light); border-radius: 8px; padding: 16px 18px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
-  .business-info h3 { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 2px; }
+  .business-info {
+    background: var(--teal-light);
+    border-radius: 8px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .business-info h3 {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 2px;
+  }
+
   .biz-row { display: flex; flex-direction: column; gap: 1px; }
   .biz-label { font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); }
   .biz-value { font-size: 13px; font-weight: 700; color: var(--text); }
 
-  .score-panel { background: var(--teal); border-radius: 8px; padding: 16px 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center; }
-  .score-label { font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.06em; }
-  .score-number { font-family: 'DM Mono', 'Courier New', monospace; font-size: 64px; font-weight: 600; color: white; line-height: 1; letter-spacing: -2px; }
-  .score-max { font-size: 16px; color: rgba(255,255,255,0.6); font-weight: 400; }
-  .score-rating { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.95); background: rgba(0,0,0,0.15); padding: 3px 12px; border-radius: 20px; margin-top: 2px; }
+  .score-panel {
+    background: var(--teal);
+    border-radius: 8px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
+  }
 
-  .cta-alert { background: var(--red); color: white; border-radius: 7px; padding: 10px 16px; font-size: 12.5px; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .score-label { font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .score-number {
+    font-family: 'DM Mono', 'Courier New', monospace;
+    font-size: 64px;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  .score-max { font-size: 16px; color: rgba(255,255,255,0.6); font-weight: 400; }
+
+  .score-rating {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.95);
+    background: rgba(0,0,0,0.15);
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-top: 2px;
+  }
+
+  .cta-alert {
+    background: var(--red);
+    color: white;
+    border-radius: 7px;
+    padding: 10px 16px;
+    font-size: 12.5px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   .cta-alert .icon { font-size: 18px; flex-shrink: 0; }
 
-  h2 { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; margin-top: 14px; }
+  h2 {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    margin-top: 14px;
+  }
 
   table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 12px; }
-  thead th { background: var(--teal); color: white; padding: 8px 12px; text-align: left; font-weight: 700; font-size: 11.5px; letter-spacing: 0.04em; }
+
+  thead th {
+    background: var(--teal);
+    color: white;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+  }
+
   thead th:last-child { text-align: right; }
+
   tbody tr { border-bottom: 1px solid var(--border); }
   tbody tr:last-child { border-bottom: none; }
   tbody td { padding: 9px 12px; vertical-align: middle; background: white; }
   tbody tr:nth-child(even) td { background: #FAFAFA; }
+
   td.cat { font-weight: 700; font-size: 12.5px; }
   td.befund { font-size: 11.5px; color: #374151; }
-  td.pts, td.prio-cell, td.wettb-bew { text-align: right; white-space: nowrap; padding-right: 12px; }
-  td.pts { font-family: 'DM Mono', 'Courier New', monospace; font-weight: 600; font-size: 13px; }
+
+  td.pts, td.prio-cell, td.wettb-bew {
+    text-align: right;
+    white-space: nowrap;
+    padding-right: 12px;
+  }
+
+  td.pts {
+    font-family: 'DM Mono', 'Courier New', monospace;
+    font-weight: 600;
+    font-size: 13px;
+  }
+
   tr.total-row td { background: var(--teal-light) !important; font-weight: 700; }
   tr.total-row td.pts { color: var(--teal); font-size: 14px; }
+
   tr.you-row td { font-weight: 700; background: var(--teal-light) !important; }
 
-  .sichtbarkeit-note { font-size: 11.5px; color: var(--text-light); margin-top: -8px; margin-bottom: 10px; font-style: italic; padding-left: 2px; }
+  .sichtbarkeit-note {
+    font-size: 11.5px;
+    color: var(--text-light);
+    margin-top: -8px;
+    margin-bottom: 10px;
+    font-style: italic;
+    padding-left: 2px;
+  }
 
-  .prio { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+  .prio {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 11.5px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
   .prio-hoch   { background: #FEE2E2; color: #991B1B; }
   .prio-mittel { background: #FEF3C7; color: #92400E; }
 
-  .prognose-block { background: var(--teal-light); border-radius: 8px; padding: 14px 18px; margin-bottom: 14px; }
-  .prognose-block h3 { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-dark); margin-bottom: 10px; }
-  .prognose-grid { display: flex; flex-direction: row; gap: 8px; }
-  .prognose-item { flex: 1 1 0; min-width: 0; background: white; border-radius: 6px; padding: 10px 10px 8px; text-align: center; border: 1px solid rgba(0,168,150,0.2); }
+  .prognose-block {
+    background: var(--teal-light);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+  }
+
+  .prognose-block h3 {
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal-dark);
+    margin-bottom: 10px;
+  }
+
+  .prognose-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .prognose-item {
+    flex: 1 1 0;
+    min-width: 0;
+    background: white;
+    border-radius: 6px;
+    padding: 10px 10px 8px;
+    text-align: center;
+    border: 1px solid rgba(0,168,150,0.2);
+  }
+
   .prognose-icon { font-size: 22px; margin-bottom: 4px; }
-  .prognose-title { font-size: 11.5px; font-weight: 700; color: var(--text); margin-bottom: 3px; line-height: 1.3; }
-  .prognose-desc { font-size: 11.5px; color: var(--text-light); line-height: 1.3; }
 
-  .warum-box { background: var(--teal); border-radius: 8px; padding: 14px 18px; margin-bottom: 14px; color: white; }
-  .warum-box h3 { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.75); margin-bottom: 5px; }
-  .warum-desc { font-size: 13px; font-weight: 600; color: white; margin-bottom: 10px; }
-  .checks { display: flex; flex-wrap: wrap; gap: 5px 20px; }
-  .check-item { width: calc(50% - 10px); font-size: 12px; font-weight: 600; color: white; display: flex; align-items: center; gap: 6px; }
-  .check-item .chk { color: white; font-weight: 800; font-size: 13px; }
-  .kein-vertrag { margin-top: 10px; font-size: 12px; font-weight: 700; color: white; background: rgba(0,0,0,0.18); display: inline-block; padding: 4px 12px; border-radius: 20px; }
+  .prognose-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 3px;
+    line-height: 1.3;
+  }
 
-  .naechster-schritt { border-radius: 8px; border: 2px solid var(--teal); overflow: hidden; margin-bottom: 14px; }
-  .ns-header { background: var(--teal); color: white; padding: 8px 16px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
-  .ns-body { padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-  .ns-text { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
-  .ns-details { font-size: 11.5px; color: var(--text-light); line-height: 1.9; }
+  .prognose-desc {
+    font-size: 11.5px;
+    color: var(--text-light);
+    line-height: 1.3;
+  }
+
+  .warum-box {
+    background: var(--teal);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    color: white;
+  }
+
+  .warum-box h3 {
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 5px;
+  }
+
+  .warum-desc {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+  }
+
+  .check-item {
+    width: calc(50% - 10px);
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .check-item .chk {
+    color: white;
+    font-weight: 800;
+    font-size: 13px;
+  }
+
+  .kein-vertrag {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    background: rgba(0,0,0,0.18);
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  .naechster-schritt {
+    border-radius: 8px;
+    border: 2px solid var(--teal);
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  .ns-header {
+    background: var(--teal);
+    color: white;
+    padding: 8px 16px;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .ns-body {
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .ns-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  .ns-details {
+    font-size: 11.5px;
+    color: var(--text-light);
+    line-height: 1.9;
+  }
+
   .ns-right { text-align: right; flex-shrink: 0; }
-  .ns-name { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 2px; }
-  .ns-tel { font-family: 'DM Mono', 'Courier New', monospace; font-size: 20px; font-weight: 600; color: var(--teal); }
-  .ns-email { font-size: 11.5px; color: var(--text-light); margin-top: 2px; }
 
-  .anon-tag { background: #FEF3C7; color: #92400E; padding: 1px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-left: 4px; }
+  .ns-name {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+
+  .ns-tel {
+    font-family: 'DM Mono', 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--teal);
+  }
+
+  .ns-email {
+    font-size: 11.5px;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  .anon-tag {
+    background: #FEF3C7;
+    color: #92400E;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 4px;
+  }
 
   @media print {
     body { background: white; }
@@ -141,7 +444,7 @@
   <a href="https://github.com/Ruzulo/Trovilo">GitHub →</a>
 </div>
 
-<!-- SEITE 1 -->
+<!-- ==================== SEITE 1 ==================== -->
 <div class="page">
   <div class="page-top-bar"></div>
   <div class="page-content">
@@ -257,12 +560,12 @@
 
     <div class="spacer"></div>
   </div>
-  <div class="page-footer">Trovilo · Beispiel-Audit (anonymisiert)</div>
+  <div class="page-footer">Trovilo · Portfolio-Showcase · Beispiel-Audit (anonymisiert)</div>
   <div class="page-bottom-bar"></div>
 </div>
 
 
-<!-- SEITE 2 -->
+<!-- ==================== SEITE 2 ==================== -->
 <div class="page">
   <div class="page-top-bar"></div>
   <div class="page-content">
@@ -360,7 +663,7 @@
         <div class="ns-left">
           <div class="ns-text">Kurzes Gespräch, keine Verpflichtung.<br>Gemeinsam schauen, was Sinn ergibt.</div>
           <div class="ns-details">
-            🌐 ruzulo.github.io/Trovilo &nbsp;·&nbsp; 📍 Region Oberbayern
+            🌐 <a href="https://github.com/Ruzulo/Trovilo" style="color: var(--teal); text-decoration: none;">GitHub Repository</a> &nbsp;·&nbsp; 📍 Region Oberbayern
           </div>
         </div>
         <div class="ns-right">
@@ -373,7 +676,7 @@
 
     <div class="spacer"></div>
   </div>
-  <div class="page-footer">Trovilo · Beispiel-Audit (anonymisiert)</div>
+  <div class="page-footer">Trovilo · Portfolio-Showcase · Beispiel-Audit (anonymisiert)</div>
   <div class="page-bottom-bar"></div>
 </div>
 
