@@ -1,1 +1,1 @@
-$(cat /home/claude/BETA-PITCH-BIBLE.md)
+_Removed – outdated._

@@ -1,148 +1,104 @@
-# Trovilo - KI-gestützte Local SEO Automation
+# Trovilo – KI-gestützter Local SEO Service
 
-> Effiziente Google Business Profile Optimierung für KMUs in Bayern
+> **Status: ⏹️ Experiment beendet (Februar 2026)**
 
-## 🎯 Über dieses Projekt
+## Was ist Trovilo?
 
-Dieses Repository dokumentiert die technische Infrastruktur und Workflows für **Trovilo** - ein Local-SEO-Service-Business, das KMUs in der Region Penzberg/München hilft, ihre Online-Sichtbarkeit durch KI-gestützte Automatisierung zu verbessern.
+Trovilo war ein Experiment: Kann eine Einzelperson mit modernen KI-Tools in wenigen Tagen einen funktionsfähigen Local-SEO-Service aufbauen – von der Website über automatisierte Audits bis zur Kundenakquise?
 
-### Business-Modell
-- **Zielgruppe:** Kleine und mittlere Unternehmen (Handwerk, Gastronomie, Gesundheit, Einzelhandel)
-- **Kernservice:** Google Business Profile Optimierung + laufende Betreuung
-- **Technologie:** n8n Workflows + Claude API für Content-Generierung
-- **Region:** Penzberg, Bad Tölz, Wolfratshausen, Geretsried (50km Radius)
+**Die Antwort: Technisch ja. Kommerziell – nicht ohne Product-Market-Fit.**
 
-## 📁 Repository-Struktur
+Dieses Repository dokumentiert den gesamten Aufbau als Portfolio-Showcase und ehrlichen Erfahrungsbericht.
+
+## 🔗 Live Demo
+
+- **Website:** [trovilo.de](https://trovilo.de) (Showcase-Modus)
+- **Beispiel-Audit:** [trovilo.de/audit-beispiel.html](https://trovilo.de/audit-beispiel.html)
+
+## Was wurde gebaut (in wenigen Tagen)
+
+### Website & Audit-System
+- Responsive Landing Page mit Pricing, FAQ, Case Study
+- Automatisiertes GBP-Audit-System (Claude API generiert komplette Reports aus einem Google-Maps-Link)
+- Anonymisierter Beispiel-Audit als Demo
+
+### Automation & Workflows (n8n)
+- Google Posts Generator (4 Kategorien: Tipp, Angebot, Behind-the-Scenes, FAQ)
+- Keyword Research Generator
+- Review Response Generator
+- Lead-Scraping-Pipeline (Google Maps → Google Sheets)
+
+### KI-Prompts & Templates
+- Wiederverwendbare Prompt-Library für Local SEO Tasks
+- Google Posts Template mit strukturiertem Output
+- Audit-Generierung via Claude API
+
+### Lead-Generierung
+- Google Maps Scraping Guide (manuell + Apify)
+- Scoring-System für Lead-Qualifizierung (SEO Score 1-10)
+- Tracking-Templates für Pipeline-Management
+
+## Tech Stack
+
+| Komponente | Tool |
+|---|---|
+| KI-Content | Claude API (Anthropic) |
+| Automation | n8n (Cloud + VPS) |
+| Website | HTML/CSS/JS, gehostet bei IONOS |
+| Lead-Scraping | Google Maps, Apify |
+| Versionierung | GitHub |
+| Design | Canva |
+
+## Marktvalidierung & Learnings
+
+### Was passiert ist
+- 15 Kaltakquise-Anrufe bei lokalen Handwerkern (Elektriker, Spengler, Maler)
+- **Ergebnis: 0 Conversions**
+- Häufigste Antwort: *"Ich kann mich vor Aufträgen kaum retten"*
+
+### Zentrale Erkenntnisse
+
+**1. Zielgruppe falsch gewählt**
+Handwerker in der Region sind chronisch überlastet – sie haben kein Kundenproblem. Bessere Zielgruppen wären Restaurants, Friseure, Fahrschulen oder Reinigungsfirmen gewesen.
+
+**2. Build vs. Validate**
+~90% der Zeit floss in Technik, ~10% in Verkaufen. Die Reihenfolge hätte umgekehrt sein müssen: erst validieren, dann bauen.
+
+**3. Etablierte Konkurrenz**
+Regionale SEO-Agenturen bedienen den Markt bereits. Der Preisvorteil durch KI-Effizienz reicht allein nicht als Differenzierung.
+
+**4. Regulatorische Hürden (DSGVO)**
+Automatisierte Massen-Outreach per E-Mail ist in Deutschland rechtlich problematisch. Kaltakquise per Telefon bleibt der einzige skalierbare Kanal – aber der skaliert schlecht als Solo-Unternehmer.
+
+**5. Twitter/X ≠ Realität**
+Die "AI + Local SEO = goldmine"-Posts auf X beschreiben ein US-Markt-Szenario. Der deutsche KMU-Markt funktioniert anders.
+
+## Repository-Struktur
 
 ```
 Trovilo/
-├── workflows/          # n8n Workflow JSON-Exports
+├── website/           # Live-Website (trovilo.de) + Beispiel-Audit
+├── workflows/         # n8n Workflow JSON-Exports
 ├── prompts/           # Claude API Prompt-Templates
-├── docs/              # Setup-Guides & SOPs
-├── website/           # Trovilo Website (index.html, style.css, script.js)
-├── scripts/           # Hilfsskripte
-├── BETA-PITCH-BIBLE.md # Sales & Pitch-Skripte
+├── scraping/          # Google Maps Lead-Gen (Guides, Config, Templates)
+├── docs/              # Setup-Dokumentation (n8n, APIs)
 └── README.md          # Diese Datei
 ```
 
-## 🚀 Services & Preise
+## Für wen ist dieses Repo interessant?
 
-### Einmalige Pakete
+- **Gründer**, die mit KI-Tools ein Service-Business aufbauen wollen (und aus meinen Fehlern lernen möchten)
+- **Entwickler**, die sehen wollen, wie man Claude API, n8n und Web-Scraping zu einem funktionierenden Produkt verbindet
+- **Local-SEO-Interessierte**, die Prompt-Templates und Workflow-Vorlagen suchen
 
-#### Optimierung (€299)
-Für bestehende Profile, die optimiert werden müssen
-- ✓ Profil-Check & Kategorien fixen
-- ✓ Beschreibung optimieren
-- ✓ 5 Google Posts erstellen
-- ✓ Bewertungs-System aufsetzen
-- ✓ 10-15 FAQs erstellen
+## Über den Autor
 
-#### Kickstart (€599) - Empfohlen
-Für neue Profile oder größere Lücken
-- ✓ Alles aus "Optimierung"
-- ✓ Komplette Profil-Verifikation
-- ✓ NAP-Check (5-10 Verzeichnisse)
-- ✓ Schema Markup für Website
-- ✓ 20-30 FAQs + Services-Liste
-- ✓ 2x Follow-up nach 2+4 Wochen
+Gebaut während eines 3-monatigen Sabbaticals (Dez 2025 – Feb 2026) als Experiment, ob man mit KI-Tools als Solo-Unternehmer ein profitables Service-Business aufbauen kann.
 
-#### Premium (€999)
-Für ambitionierte Businesses + Multi-Location
-- ✓ Alles aus "Kickstart"
-- ✓ **3 Monate Content-Betreuung inklusive**
-- ✓ Wöchentliche Google Posts
-- ✓ Monatliche Performance-Reports
-- ✓ Bewertungs-Management
-- ✓ Multi-Location Setup möglich
+**Fazit:** Die Technik war das Einfache. Product-Market-Fit bleibt die eigentliche Herausforderung – egal wie gut die Tools sind.
 
-### Laufende Betreuung (optional, monatlich kündbar)
+## Lizenz
 
-#### Betreuung Basis (€75/Monat)
-"Set & Forget" - Autopilot-Modus
-- ✓ Review Monitoring & Antworten
-- ✓ Monatlicher Report
-- ✓ Spam-Meldung
+Dieses Repository ist öffentlich zugänglich als Portfolio und Lernressource.
 
-#### Betreuung Aktiv (€149/Monat) - Beliebt
-Aktive Optimierung + Wachstum
-- ✓ Alles aus "Basis"
-- ✓ 4 Google Posts pro Monat
-- ✓ 2 FAQ Updates monatlich
-- ✓ Foto-Management (1x/Monat)
-
-## 🛠️ Tech Stack
-
-- **Automation:** n8n (Cloud + VPS)
-- **AI Content:** Anthropic Claude (Sonnet 4.5)
-- **Google APIs:** Business Profile API, Sheets, Docs, Drive
-- **Design:** Canva Pro (via MCP)
-- **Analytics:** Google Search Console
-- **Website:** GitHub Pages (trovilo.de)
-
-## 📊 Workflows
-
-### ✅ Google Posts Generator
-Automatisierte Erstellung von 4 Google Business Profile Posts in verschiedenen Kategorien:
-- TIPP/WISSEN
-- ANGEBOT
-- BEHIND-THE-SCENES
-- FAQ
-
-**Status:** Produktiv  
-**Details:** [workflows/google-posts-generator.json](workflows/google-posts-generator.json)
-
-### 🔜 Geplante Workflows
-- Review Response Generator
-- Keyword Research Automation
-- GBP Performance Reporting
-- Automated Audit Report Generator
-
-## 🎓 Setup-Guides
-
-- [n8n Cloud Setup](docs/n8n-setup.md)
-- Claude API Integration (coming soon)
-- Client Onboarding Process (coming soon)
-
-## 📝 Prompts
-
-Alle Prompts sind als wiederverwendbare Templates in `/prompts/` verfügbar:
-- [Google Posts Template](prompts/google-posts-template.md)
-- GBP Description Generator (coming soon)
-- FAQ Generator (coming soon)
-- Review Response Templates (coming soon)
-
-## 🎯 Sales & Outreach
-
-- **BETA-PITCH-BIBLE.md:** Komplette Sammlung von Cold-Call-Skripten, WhatsApp-Pitches, Audit-Templates, Einwandbehandlung
-- **Zielgruppe:** Handwerker (Elektriker, Sanitär, Maler) in Penzberg, Bad Tölz, Wolfratshausen
-- **Strategie:** Kostenloses Video-Audit (3-5 Min.) als Lead-Magnet
-
-## 🔒 Sicherheit
-
-- **Keine API-Keys im Repo!** Alle Credentials in n8n-Credentials oder Environment Variables
-- `.gitignore` verhindert versehentliches Pushen von Secrets
-- Workflow-JSONs enthalten nur Struktur, keine Credentials
-
-## 📈 Aktueller Status
-
-- ✅ Website live auf trovilo.de
-- ✅ Pricing finalisiert (€299/€599/€999 + €75/€149)
-- ✅ Sales-Materialien fertig (BETA-PITCH-BIBLE.md)
-- 🔄 Erste Beta-Kunden werden akquiriert
-- 🔜 n8n Workflows werden produktiv gestellt
-
-## 📄 Lizenz
-
-Dieses Projekt ist privat und für eigene Business-Zwecke.  
-© 2026 Trovilo
-
-## 🤝 Kontakt
-
-Bei Fragen zum Setup oder den Workflows:  
-**Email:** servus@trovilo.de  
-**Website:** https://trovilo.de  
-**WhatsApp:** +49 160 9790 9740
-
----
-
-**Status:** 🟢 In aktiver Entwicklung (Sabbatical-Phase bis 28.02.2026)
+© 2026 Mario Grüttner
