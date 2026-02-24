@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trovilo – KI-Experiment: Local SEO Service in wenigen Tagen aufgebaut</title>
+    <meta name="description" content="Trovilo ist ein KI-Experiment: Wie schnell kann man mit KI-Tools einen kompletten Local SEO Service aufbauen? Ergebnis, Learnings und Tech-Stack.">
+    <meta name="keywords" content="ki experiment, local seo, ai startup, portfolio, trovilo">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='36' r='26' fill='none' stroke='%2300A896' stroke-width='10'/><circle cx='50' cy='36' r='11' fill='%2300A896'/><path d='M50 62 L50 88' stroke='%2300A896' stroke-width='10' stroke-linecap='round' fill='none'/></svg>">
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* === SHOWCASE OVERLAY STYLES === */
+        .showcase-banner {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 0.75rem 0;
+            border-bottom: 3px solid #00A896;
+        }
+        .showcase-banner-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .showcase-badge {
+            background: linear-gradient(135deg, #00A896 0%, #02C39A 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .showcase-banner p { font-size: 0.9rem; color: #ccc; margin: 0; line-height: 1.5; }
+        .showcase-banner strong { color: white; }
+        .showcase-banner a { color: #00A896; text-decoration: none; font-weight: 600; white-space: nowrap; }
+        .showcase-banner a:hover { color: #02C39A; }
+        .showcase-hint { font-size: 0.95rem; color: #999; margin-top: 2rem; font-style: italic; }
+        .showcase-info-box {
+            background: linear-gradient(135deg, #f0fdfa 0%, #e0f7fa 100%);
+            border: 2px solid #00A896;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        .showcase-info-box p { color: #333; font-size: 1.05rem; line-height: 1.7; }
+        .pricing-button-disabled {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            background: #e0e0e0;
+            color: #999;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: default;
+        }
+        .pricing .price { font-size: 1.8rem !important; }
+        @media (max-width: 768px) {
+            .showcase-banner-content { flex-direction: column; text-align: center; gap: 0.5rem; }
+            .showcase-banner p { font-size: 0.8rem; }
+            .showcase-info-box { margin: 1.5rem 1rem; padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- SHOWCASE BANNER -->
+    <div class="showcase-banner">
+        <div class="container">
+            <div class="showcase-banner-content">
+                <span class="showcase-badge">🧪 KI-Experiment</span>
+                <p>Diese Website ist ein <strong>Portfolio-Showcase</strong> – erstellt als KI-Experiment in wenigen Tagen. 
+                Kein aktives Geschäft. <a href="https://github.com/Ruzulo/Trovilo" target="_blank">→ Zum Tech-Stack auf GitHub</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>📍 TROVILO</h1>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="#funktioniert">So funktioniert's</a>
+                <a href="#quick-audit">Audit-Beispiel</a>
+                <a href="#preise">Pakete</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://github.com/Ruzulo/Trovilo" target="_blank" class="cta-button">GitHub →</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Wie viele Kunden verlieren Sie täglich?</h2>
+            <p class="hero-subtitle">Local SEO für Handwerker, Ärzte und lokale Businesses in Penzberg, Bad Tölz &amp; Umgebung</p>
+            
+            <div class="hero-benefits">
+                <div class="benefit">
+                    <span class="checkmark">✓</span>
+                    <span>Ohne Agentur-Preise</span>
+                </div>
+                <div class="benefit">
+                    <span class="checkmark">✓</span>
+                    <span>Erste Ergebnisse in 2-4 Wochen</span>
+                </div>
+                <div class="benefit">
+                    <span class="checkmark">✓</span>
+                    <span>Persönlich und regional</span>
+                </div>
+            </div>
+            
+            <p class="showcase-hint">⬇ So würde die fertige Produktseite aussehen</p>
+            <a href="audit-beispiel.html" class="cta-button-large" style="margin-top: 1rem;">📄 Beispiel-Audit ansehen</a>
+        </div>
+    </section>
+
+    <!-- Quick Check Section -->
+    <section id="quick-audit" class="quick-audit">
+        <div class="container">
+            <h2>🔍 Kostenloser Google-Check in 2 Minuten</h2>
+            <p class="subtitle">Der Kunde schickt den Link zu seinem Google Business Profil – innerhalb von 24h erhält er ein kurzes Video per WhatsApp (3-5 Min.) mit den 5 größten Verbesserungen.</p>
+            
+            <div class="audit-checklist">
+                <h3>Was im kostenlosen Check geprüft wird:</h3>
+                <div class="checklist-categories">
+                    <div class="checklist-row">
+                        <div class="checklist-item">
+                            <div class="checklist-icon">📝</div>
+                            <h4>Basisdaten</h4>
+                            <p>Name, Adresse, Telefon, Öffnungszeiten</p>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">🏷️</div>
+                            <h4>Kategorien &amp; Services</h4>
+                            <p>Richtige Keywords, vollständige Services</p>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">📸</div>
+                            <h4>Fotos &amp; Bilder</h4>
+                            <p>Logo, Bilder, aktuelle Inhalte</p>
+                        </div>
+                    </div>
+                    <div class="checklist-row checklist-row-center">
+                        <div class="checklist-item">
+                            <div class="checklist-icon">⭐</div>
+                            <h4>Bewertungen</h4>
+                            <p>Anzahl, Qualität, Antworten</p>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-icon">📢</div>
+                            <h4>Aktivität</h4>
+                            <p>Posts, Updates, FAQs</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="checklist-note">Jede Kategorie wird bewertet (1-5 Punkte) – der Kunde sieht sofort, wo er steht!</p>
+            </div>
+            
+            <div class="showcase-info-box">
+                <p>📄 <strong>Beispiel-Audit ansehen:</strong> Der komplette Audit wird KI-gestützt generiert (Claude API + eigene Prompts). Von Google-Maps-Link bis fertigem Report in unter 10 Minuten.</p>
+                <a href="audit-beispiel.html" class="cta-button-large" style="margin-top: 1rem;">📄 Beispiel-Audit öffnen</a>
+                <br>
+                <a href="https://github.com/Ruzulo/Trovilo" target="_blank" style="color: var(--primary-color); font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-block; margin-top: 0.75rem;">Tech-Details auf GitHub →</a>
+            </div>
+            
+            <p class="trust-line">✓ Kein Spam · ✓ Keine Kosten · ✓ Ergebnis in 24h</p>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="funktioniert" class="how-it-works">
+        <div class="container">
+            <h2>So funktioniert lokales SEO</h2>
+            <div class="three-columns">
+                <div class="column">
+                    <div class="icon">📍</div>
+                    <h3>Google Business Profil</h3>
+                    <p>Ihr Eintrag bei Google Maps optimieren: Beschreibung, Fotos, Öffnungszeiten, Services. Erscheinen Sie in den Top 3!</p>
+                </div>
+                <div class="column">
+                    <div class="icon">⭐</div>
+                    <h3>Bewertungen sammeln</h3>
+                    <p>Systematisch positive Bewertungen sammeln. 4.5+ Sterne = +120% mehr Anfragen. Wir zeigen Ihnen wie!</p>
+                </div>
+                <div class="column">
+                    <div class="icon">📢</div>
+                    <h3>Sichtbar bleiben</h3>
+                    <p>Google Posts, Updates, Angebote. Niemand in der Region macht das - nutzen Sie diesen Vorteil!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="container">
+            <h2>Über dieses Experiment</h2>
+            <p class="about-text">Trovilo ist ein KI-Experiment: In wenigen Tagen habe ich als Solo-Entwickler mit KI-Tools (Claude, n8n, Canva) einen kompletten Local-SEO-Service aufgebaut – von der Website über automatisierte Audits bis zum Go-to-Market-Konzept. Gesamtkosten: unter €50/Monat. Diese Seite dokumentiert das Ergebnis.</p>
+            <div class="contact-options">
+                <div class="contact-option">
+                    <div class="contact-icon">🧪</div>
+                    <h4>Tech-Stack</h4>
+                    <a href="https://github.com/Ruzulo/Trovilo" target="_blank">GitHub Repository</a>
+                </div>
+                <div class="contact-option">
+                    <div class="contact-icon">🛠️</div>
+                    <h4>Tools</h4>
+                    <span style="color: var(--primary-color); font-weight: 600;">Claude API · n8n · Canva</span>
+                </div>
+                <div class="contact-option">
+                    <div class="contact-icon">⏱️</div>
+                    <h4>Aufbauzeit</h4>
+                    <span style="color: var(--primary-color); font-weight: 600;">Wenige Tage (Sabbatical)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="preise" class="pricing">
+        <div class="container">
+            <h2>Paket-Konzept</h2>
+            <p class="section-subtitle">So hätte die Preisstruktur aussehen können. Keine versteckten Kosten, faire Festpreise.</p>
+            
+            <h3 style="text-align: center; margin: 40px 0 30px; color: var(--primary-color); font-size: 1.5rem;">Einmalige Pakete</h3>
+            
+            <div class="pricing-grid" style="max-width: 1100px;">
+                <div class="pricing-card">
+                    <h3>Optimierung</h3>
+                    <div class="price">auf Anfrage<span class="price-period">einmalig</span></div>
+                    <ul class="features">
+                        <li>✓ Profil-Check &amp; Kategorien fixen</li>
+                        <li>✓ Beschreibung optimieren</li>
+                        <li>✓ 5 Google Posts erstellen</li>
+                        <li>✓ Bewertungs-System aufsetzen</li>
+                        <li>✓ 10-15 FAQs erstellen</li>
+                    </ul>
+                    <p class="for-whom">Für: Bestehende Profile, die optimiert werden müssen</p>
+                    <span class="pricing-button pricing-button-disabled">Nur zur Veranschaulichung</span>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="badge">Beispiel</div>
+                    <h3>Kickstart</h3>
+                    <div class="price">auf Anfrage<span class="price-period">einmalig</span></div>
+                    <ul class="features">
+                        <li>✓ Alles aus "Optimierung"</li>
+                        <li>✓ Komplette Profil-Verifikation</li>
+                        <li>✓ NAP-Check (5-10 Verzeichnisse)</li>
+                        <li>✓ Schema Markup für Website</li>
+                        <li>✓ 20-30 FAQs + Services-Liste</li>
+                        <li>✓ 2x Follow-up nach 2+4 Wochen</li>
+                    </ul>
+                    <p class="for-whom">Für: Neue Profile oder größere Lücken</p>
+                    <span class="pricing-button pricing-button-disabled">Nur zur Veranschaulichung</span>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <div class="price">auf Anfrage<span class="price-period">einmalig</span></div>
+                    <ul class="features">
+                        <li>✓ Alles aus "Kickstart"</li>
+                        <li>✓ <strong>3 Monate Content-Betreuung</strong></li>
+                        <li>✓ Wöchentliche Google Posts</li>
+                        <li>✓ Monatliche Performance-Reports</li>
+                        <li>✓ Bewertungs-Management</li>
+                        <li>✓ Multi-Location Setup möglich</li>
+                    </ul>
+                    <p class="for-whom">Für: Ambitionierte Businesses + Multi-Location</p>
+                    <span class="pricing-button pricing-button-disabled">Nur zur Veranschaulichung</span>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; margin: 60px 0 30px; color: var(--primary-color); font-size: 1.5rem;">Laufende Betreuung <span style="font-size: 0.9rem; color: #666;">(monatlich kündbar)</span></h3>
+            
+            <div class="pricing-grid" style="max-width: 900px; margin: 0 auto;">
+                <div class="pricing-card">
+                    <h3>Betreuung Basis</h3>
+                    <div class="price">auf Anfrage<span class="price-period">pro Monat</span></div>
+                    <ul class="features">
+                        <li>✓ Review Monitoring &amp; Antworten</li>
+                        <li>✓ Monatlicher Report</li>
+                        <li>✓ Spam-Meldung</li>
+                    </ul>
+                    <p class="for-whom">Für: "Set &amp; Forget" - Autopilot-Modus</p>
+                    <span class="pricing-button pricing-button-disabled">Nur zur Veranschaulichung</span>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="badge">Beispiel</div>
+                    <h3>Betreuung Aktiv</h3>
+                    <div class="price">auf Anfrage<span class="price-period">pro Monat</span></div>
+                    <ul class="features">
+                        <li>✓ Alles aus "Basis"</li>
+                        <li>✓ 4 Google Posts pro Monat</li>
+                        <li>✓ 2 FAQ Updates monatlich</li>
+                        <li>✓ Foto-Management (1x/Monat)</li>
+                    </ul>
+                    <p class="for-whom">Für: Aktive Optimierung + Wachstum</p>
+                    <span class="pricing-button pricing-button-disabled">Nur zur Veranschaulichung</span>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 40px; color: #666; font-size: 0.95rem;">
+                <strong>Hinweis:</strong> Dies ist ein Paket-Konzept zur Veranschaulichung – kein aktives Angebot.
+            </p>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section id="beispiel" class="case-study">
+        <div class="container">
+            <h2>Realistische Ergebnisse: Ein Sanitärbetrieb aus der Region</h2>
+            <div class="case-study-content">
+                <div class="case-study-text">
+                    <h3>Praxis-Beispiel aus unserer Analyse:</h3>
+                    <div class="status-box status-before">
+                        <h4>❌ Vorher (Typisches schlechtes Profil):</h4>
+                        <ul>
+                            <li>Nur 5 Bewertungen (3.4 Sterne)</li>
+                            <li>Keine Fotos auf Google Maps</li>
+                            <li>Keine Beschreibung, keine Services</li>
+                            <li>Keine Posts oder Updates</li>
+                        </ul>
+                    </div>
+                    <div class="results-box">
+                        <h4>📊 Das Ergebnis:</h4>
+                        <ul>
+                            <li>→ Im unteren Drittel der lokalen Konkurrenz</li>
+                            <li>→ ~400 Profilaufrufe/Monat</li>
+                            <li>→ ~10 Anrufe/Monat</li>
+                            <li>→ ~3-4 Aufträge/Monat aus Google</li>
+                        </ul>
+                    </div>
+                    <div class="status-box status-after">
+                        <h4>✅ Nach professioneller Optimierung (realistische Prognose):</h4>
+                        <ul>
+                            <li>→ ~900 Profilaufrufe/Monat <strong>(+125%)</strong></li>
+                            <li>→ ~30 Anrufe/Monat <strong>(+200%)</strong></li>
+                            <li>→ ~8-10 Aufträge/Monat <strong>(+150%)</strong></li>
+                            <li>→ <strong>+5-6 zusätzliche Aufträge pro Monat</strong></li>
+                            <li>→ <strong>~€1.750-2.100 mehr Umsatz/Monat</strong></li>
+                        </ul>
+                        <p class="case-study-note"><small>*Bei durchschnittlichem Auftragswert von €350 (Reparaturen/Wartung).</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional -->
+    <section class="regional">
+        <div class="container">
+            <h2>Regional verwurzelt</h2>
+            <p>Das Konzept war ausschließlich auf die Region Penzberg, Bad Tölz, Wolfratshausen und Geretsried ausgelegt (max. 50km Radius).</p>
+            <div class="regional-benefits">
+                <div class="regional-benefit"><span class="checkmark">✓</span><span>Lokale Konkurrenzanalyse</span></div>
+                <div class="regional-benefit"><span class="checkmark">✓</span><span>Persönliche Treffen möglich</span></div>
+                <div class="regional-benefit"><span class="checkmark">✓</span><span>Schnelle Reaktionszeiten</span></div>
+                <div class="regional-benefit"><span class="checkmark">✓</span><span>Faire Preise ohne Großstadt-Aufschlag</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Häufig gestellte Fragen</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question"><span>Was ist Local SEO?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Local SEO optimiert Ihre Online-Präsenz für lokale Suchanfragen. Wenn jemand "Elektriker Penzberg" googelt, erscheinen Sie ganz oben in Google Maps und in den Suchergebnissen. 46% aller Google-Suchen haben lokalen Bezug!</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Wie funktioniert Google Maps Ranking?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Google bewertet Ihr Business nach 3 Faktoren: <strong>Relevanz</strong> (richtige Kategorien, Keywords), <strong>Entfernung</strong> (wie nah sind Sie am Suchenden), und <strong>Bekanntheit</strong> (Bewertungen, Fotos, Aktivität). Wir optimieren alle 3 Bereiche.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Für wen ist Local SEO geeignet?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Für alle lokalen Businesses mit physischem Standort oder Service-Gebiet: Handwerker, Ärzte, Cafés, Friseure, Einzelhändler. <strong>Nicht geeignet:</strong> Online-Shops ohne lokalen Bezug.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Was bringt mir das konkret?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Ein optimiertes Profil bekommt durchschnittlich 2-3x mehr Anrufe. Für einen Handwerker bedeutet das typischerweise <strong>5-8 zusätzliche Anfragen pro Monat</strong> – also <strong>€1.000-2.500 mehr Umsatz monatlich</strong>.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Wie schnell sehe ich Ergebnisse?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p><strong>Erste Verbesserungen:</strong> 7-14 Tage. <strong>Voller Effekt:</strong> 4-8 Wochen. Die meisten Kunden sehen nach 3-4 Wochen die ersten zusätzlichen Aufträge.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Muss ich einen Vertrag abschließen?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p><strong>Nein!</strong> Die Pakete sind einmalige Festpreise ohne Vertragsbindung. Laufende Betreuung ist optional und monatlich kündbar.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Muss ich technisch fit sein?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p><strong>Nein!</strong> 95% der Arbeit wird übernommen. Der Kunde muss nur Zugang zum Google Business Profil geben, ein paar Fotos bereitstellen und Kunden um Bewertungen bitten (mit Vorlagen – sehr einfach).</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question"><span>Was unterscheidet das von großen Agenturen?</span><span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><p>Lokal, schnell, persönlich: Kein Callcenter, faire Preise, persönliche Treffen möglich. Große Agenturen verlangen €1.000-3.000/Monat für das gleiche, was hier einmalig als Festpreis angeboten werden könnte.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section id="fazit" class="final-cta">
+        <div class="container">
+            <h2>Das Experiment im Überblick</h2>
+            <p>In wenigen Tagen mit KI-Tools ein komplettes Local-SEO-Business aufgebaut: Website, automatisierte Audits, Pricing-Modell, Go-to-Market-Strategie. Gesamtkosten: unter €50/Monat.</p>
+            <div class="cta-buttons">
+                <a href="audit-beispiel.html" class="cta-button-filled"><span class="button-icon">📄</span>Beispiel-Audit</a>
+                <a href="https://github.com/Ruzulo/Trovilo" target="_blank" class="cta-button-outline" style="border-color: var(--primary-color); color: var(--primary-color);"><span class="button-icon">💻</span>GitHub Repository</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>TROVILO</h3>
+                    <p>KI-Experiment · Portfolio-Showcase</p>
+                </div>
+                <div class="footer-contact">
+                    <p>Ein Projekt von Mario Grüttner</p>
+                    <p>Erstellt: Februar 2026</p>
+                    <p>Tech: Claude API · n8n · Canva</p>
+                </div>
+                <div class="footer-legal">
+                    <p>&copy; 2026 Trovilo. Alle Rechte vorbehalten.</p>
+                    <div class="footer-links">
+                        <a href="impressum.html">Impressum</a>
+                        <a href="datenschutz.html">Datenschutz</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
